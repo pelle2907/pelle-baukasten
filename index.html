@@ -21,14 +21,28 @@
     </div>
 
     <div id="content" class="content hidden">
-      <h2>Willkommen Pelle 🔥</h2>
-      <p>Du bist im privaten Bereich.</p>
 
       <div class="button-row">
-        <button class="secondary">Dashboard</button>
-        <button class="secondary">Projekte</button>
-        <button class="secondary">Notizen</button>
+        <button class="secondary" onclick="showPage('dashboard')">Dashboard</button>
+        <button class="secondary" onclick="showPage('projekte')">Projekte</button>
+        <button class="secondary" onclick="showPage('notizen')">Notizen</button>
       </div>
+
+      <div id="dashboard" class="page">
+        <h2>Dashboard</h2>
+        <p>Willkommen in deinem System.</p>
+      </div>
+
+      <div id="projekte" class="page hidden">
+        <h2>Projekte</h2>
+        <p>Hier kommen deine Projekte rein.</p>
+      </div>
+
+      <div id="notizen" class="page hidden">
+        <h2>Notizen</h2>
+        <p>Hier kannst du später Sachen speichern.</p>
+      </div>
+
     </div>
   </main>
 
