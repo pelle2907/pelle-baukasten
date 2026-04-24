@@ -7,16 +7,28 @@
 </head>
 <body>
 
-  <main>
+  <div class="background"></div>
+
+  <main class="card">
+    <p class="tag">PRIVATE WEBSITE</p>
+
     <h1>Pelle Baukasten</h1>
-    <p>Private Website – nur für dich</p>
+    <p class="subtitle">Mein eigener digitaler Bereich – selbst gebaut, online gestellt und ständig erweitert.</p>
 
-    <input type="password" id="pw" placeholder="Passwort">
-    <button onclick="login()">Login</button>
+    <div class="login-box">
+      <input type="password" id="pw" placeholder="Passwort eingeben">
+      <button onclick="login()">Einloggen</button>
+    </div>
 
-    <div id="content" style="display:none;">
-      <h2>Willkommen Pelle</h2>
-      <p>Du hast es geschafft 🔥</p>
+    <div id="content" class="content hidden">
+      <h2>Willkommen Pelle 🔥</h2>
+      <p>Du bist im privaten Bereich.</p>
+
+      <div class="button-row">
+        <button class="secondary">Dashboard</button>
+        <button class="secondary">Projekte</button>
+        <button class="secondary">Notizen</button>
+      </div>
     </div>
   </main>
 
