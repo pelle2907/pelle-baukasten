@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Milano</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo" onclick="showPage('home')">Café Milano</div>
+
+  <nav>
+    <button onclick="showPage('home')">Start</button>
+    <button onclick="showPage('about')">Über uns</button>
+    <button onclick="showPage('menu')">Karte</button>
+    <button onclick="showPage('contact')">Kontakt</button>
+    <button class="reserve-btn" onclick="showPage('reservation')">Reservierung</button>
+  </nav>
+</header>
+
+<main>
+
+  <section id="home" class="page hero">
+    <div class="hero-text">
+      <p class="tag">DEIN GEMÜTLICHES CAFÉ</p>
+      <h1>Ein Ort für guten Kaffee und ruhige Momente.</h1>
+      <p>
+        Im Café Milano erwarten dich frischer Kaffee, warme Croissants und eine Atmosphäre,
+        in der man gerne ein bisschen länger bleibt.
+      </p>
+
+      <div class="hero-buttons">
+        <button class="btn primary" onclick="showPage('menu')">Unsere Karte</button>
+        <button class="btn secondary" onclick="showPage('reservation')">Tisch reservieren</button>
+      </div>
+
+      <div class="hours-preview">
+        <h3>Öffnungszeiten</h3>
+        <div class="hours-grid">
+          <div>
+            <strong>Mo – Fr</strong>
+            <span>08:00 – 18:00</span>
+          </div>
+          <div>
+            <strong>Samstag</strong>
+            <span>09:00 – 16:00</span>
+          </div>
+          <div>
+            <strong>Sonntag</strong>
+            <span>geschlossen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="page hidden content-page">
+    <p class="tag">ÜBER UNS</p>
+    <h2>Mit Liebe gemacht – jeden Tag.</h2>
+    <p>
+      Wir sind ein kleines Café mit einem einfachen Ziel: Menschen einen schönen Moment schenken.
+      Ob kurzer Espresso am Morgen, Cappuccino mit Freunden oder eine ruhige Pause am Nachmittag –
+      bei uns sollst du dich willkommen fühlen.
+    </p>
+
+    <div class="warm-card">
+      <span>☕</span>
+      <h3>Frisch gebrüht</h3>
+      <p>Kaffee, Gebäck und kleine Momente, die den Tag besser machen.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="page hidden content-page">
+    <p class="tag">UNSERE KARTE</p>
+    <h2>Lieblingsmomente auf der Karte</h2>
+
+    <div class="menu-grid">
+      <div class="menu-item">
+        <h3>Espresso</h3>
+        <p>Klein, stark und perfekt für den Start in den Tag.</p>
+        <span>2,50 €</span>
+      </div>
+
+      <div class="menu-item">
+        <h3>Cappuccino</h3>
+        <p>Sanft, cremig und mit feinem Milchschaum.</p>
+        <span>3,80 €</span>
+      </div>
+
+      <div class="menu-item">
+        <h3>Butter-Croissant</h3>
+        <p>Frisch, weich und genau richtig zum Kaffee.</p>
+        <span>2,90 €</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="page hidden content-page">
+    <p class="tag">KONTAKT</p>
+    <h2>Wir freuen uns auf deinen Besuch.</h2>
+
+    <div class="contact-grid">
+      <div>
+        <h3>Adresse</h3>
+        <p>Musterstraße 1<br>12345 Stadt</p>
+      </div>
+
+      <div>
+        <h3>Telefon</h3>
+        <p>0123 456789</p>
+      </div>
+
+      <div>
+        <h3>E-Mail</h3>
+        <p>info@cafemilano.de</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservation" class="page hidden content-page">
+    <p class="tag">RESERVIERUNG</p>
+    <h2>Reserviere deinen Tisch.</h2>
+    <p>Schick uns deine Anfrage – wir melden uns so schnell wie möglich zurück.</p>
+
+    <form class="reservation-form" onsubmit="sendReservation(event)">
+      <input type="text" id="name" placeholder="Dein Name" required>
+      <input type="email" id="email" placeholder="Deine E-Mail" required>
+      <input type="date" id="date" required>
+      <input type="time" id="time" required>
+      <input type="number" id="people" placeholder="Personen" min="1" required>
+      <textarea id="message" placeholder="Besondere Wünsche?"></textarea>
+      <button class="btn primary" type="submit">Reservierung anfragen</button>
+    </form>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
