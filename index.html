@@ -7,42 +7,41 @@
 </head>
 <body>
 
-  <div class="background"></div>
-
   <main class="card">
-    <p class="tag">PRIVATE WEBSITE</p>
-
     <h1>Pelle Baukasten</h1>
-    <p class="subtitle">Mein eigener digitaler Bereich – selbst gebaut, online gestellt und ständig erweitert.</p>
+    <p id="subtitle">Private Website – nur für dich</p>
 
-    <div class="login-box">
-      <input type="password" id="pw" placeholder="Passwort eingeben">
+    <div id="loginArea" class="login-area">
+      <input type="password" id="pw" placeholder="Passwort">
       <button onclick="login()">Einloggen</button>
     </div>
 
-    <div id="content" class="content hidden">
+    <div id="content" class="hidden">
+      <div class="topbar">
+        <h2>Willkommen Pelle 🔥</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
 
       <div class="button-row">
-        <button class="secondary" onclick="showPage('dashboard')">Dashboard</button>
-        <button class="secondary" onclick="showPage('projekte')">Projekte</button>
-        <button class="secondary" onclick="showPage('notizen')">Notizen</button>
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('projekte')">Projekte</button>
+        <button onclick="showPage('notizen')">Notizen</button>
       </div>
 
       <div id="dashboard" class="page">
-        <h2>Dashboard</h2>
-        <p>Willkommen in deinem System.</p>
+        <h3>Dashboard</h3>
+        <p>Das ist dein privater Bereich.</p>
       </div>
 
       <div id="projekte" class="page hidden">
-        <h2>Projekte</h2>
-        <p>Hier kommen deine Projekte rein.</p>
+        <h3>Projekte</h3>
+        <p>Hier kommen später deine Website-Projekte rein.</p>
       </div>
 
       <div id="notizen" class="page hidden">
-        <h2>Notizen</h2>
-        <p>Hier kannst du später Sachen speichern.</p>
+        <h3>Notizen</h3>
+        <p>Hier kannst du später Ideen, Preise und Kundeninfos sammeln.</p>
       </div>
-
     </div>
   </main>
 
