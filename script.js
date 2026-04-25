@@ -13,9 +13,7 @@ function showPage(id) {
   });
 
   document.getElementById(id).classList.remove("hidden");
-
-  const menu = document.getElementById("menu");
-  menu.classList.add("hidden");
+  document.getElementById("menu").classList.add("hidden");
 
   window.scrollTo({
     top: 0,
@@ -81,6 +79,19 @@ function checkout() {
   }
 
   alert("Checkout kommt später. Aktuell ist das noch ein Test-Warenkorb.");
+}
+
+function sendRequest(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const packageChoice = document.getElementById("packageChoice").value;
+
+  alert("Danke " + name + "! Deine Anfrage für " + packageChoice + " wurde vorbereitet. Echter Versand kommt später.");
+
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("message").value = "";
 }
 
 function login() {
