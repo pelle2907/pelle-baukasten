@@ -14,16 +14,16 @@
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
     <div id="menu" class="menu hidden">
-      <p>Account</p>
-      <p>Einstellungen</p>
-      <p>Support</p>
+      <p onclick="openMenuPage('account')">Account</p>
+      <p onclick="openMenuPage('settings')">Einstellungen</p>
+      <p onclick="openMenuPage('support')">Support</p>
     </div>
   </header>
 
   <main class="app">
 
+    <!-- LOGIN -->
     <section class="hero">
-      <p class="tag">PELLE SYSTEM</p>
       <h1>Pelle Baukasten</h1>
       <p id="subtitle">Private Website – nur für dich</p>
 
@@ -33,31 +33,51 @@
       </div>
     </section>
 
+    <!-- CONTENT -->
     <section id="content" class="hidden">
+
       <div class="topbar">
         <h2>Willkommen Pelle 🔥</h2>
         <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
 
+      <!-- NAV -->
       <nav class="nav">
         <button onclick="showPage('dashboard')">Dashboard</button>
         <button onclick="showPage('projekte')">Projekte</button>
         <button onclick="showPage('notizen')">Notizen</button>
       </nav>
 
+      <!-- HAUPTSEITEN -->
       <div id="dashboard" class="page">
         <h3>Dashboard</h3>
-        <p>Alles läuft 🔥</p>
+        <p>Alles läuft perfekt 🔥</p>
       </div>
 
       <div id="projekte" class="page hidden">
         <h3>Projekte</h3>
-        <p>Hier kommen Projekte rein.</p>
+        <p>Hier kommen deine Projekte rein.</p>
       </div>
 
       <div id="notizen" class="page hidden">
         <h3>Notizen</h3>
-        <p>Hier kommen Notizen rein.</p>
+        <p>Hier kommen deine Notizen rein.</p>
+      </div>
+
+      <!-- MENU SEITEN -->
+      <div id="account" class="page hidden">
+        <h3>Account</h3>
+        <p>Hier kommen später Account-Daten rein.</p>
+      </div>
+
+      <div id="settings" class="page hidden">
+        <h3>Einstellungen</h3>
+        <p>Hier kannst du später Einstellungen ändern.</p>
+      </div>
+
+      <div id="support" class="page hidden">
+        <h3>Support</h3>
+        <p>Kontakt: deine@email.de</p>
       </div>
 
     </section>

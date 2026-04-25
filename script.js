@@ -18,7 +18,9 @@ function logout() {
 function showPage(pageId) {
   const pages = document.querySelectorAll(".page");
 
-  pages.forEach(p => p.classList.add("hidden"));
+  pages.forEach(function(page) {
+    page.classList.add("hidden");
+  });
 
   document.getElementById(pageId).classList.remove("hidden");
 }
@@ -26,4 +28,9 @@ function showPage(pageId) {
 function toggleMenu() {
   const menu = document.getElementById("menu");
   menu.classList.toggle("hidden");
+}
+
+function openMenuPage(pageId) {
+  showPage(pageId);
+  document.getElementById("menu").classList.add("hidden");
 }
