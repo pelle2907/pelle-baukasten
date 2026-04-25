@@ -4,200 +4,114 @@
 
 body {
   margin: 0;
-  background:
-    radial-gradient(circle at top left, rgba(120, 70, 255, 0.25), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(0, 200, 255, 0.18), transparent 35%),
-    #0b0b0f;
+  background: #0b0b0f;
   color: white;
   font-family: Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  padding: 40px 16px;
 }
 
-.app {
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
   width: 100%;
-  max-width: 900px;
-}
-
-.hero,
-#content {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 28px;
-  padding: 34px;
-  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(18px);
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.tag {
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #a78bfa;
-  font-weight: bold;
-}
-
-h1 {
-  margin: 10px 0;
-  font-size: 48px;
-}
-
-h2,
-h3,
-h4,
-p {
-  margin-top: 0;
-}
-
-#subtitle {
-  color: #d1d1d1;
-}
-
-.login-area {
-  margin-top: 25px;
-}
-
-input {
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  outline: none;
-  min-width: 230px;
-}
-
-button {
-  padding: 14px 20px;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: bold;
-  margin: 5px;
-  transition: 0.2s;
-}
-
-button:hover {
-  transform: translateY(-2px);
-  opacity: 0.9;
-}
-
-.topbar {
+  padding: 18px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+.logo {
+  margin: 0;
+}
+
+.menu-btn {
+  font-size: 24px;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* DROPDOWN MENU */
+.menu {
+  position: absolute;
+  top: 60px;
+  right: 30px;
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.menu p {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.menu p:hover {
+  opacity: 0.7;
+}
+
+/* APP */
+.app {
+  padding-top: 100px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 40px;
+}
+
+.login-area {
+  margin-top: 20px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+button {
+  padding: 12px 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
 }
 
 .logout-btn {
-  background: #ff4d4d;
+  background: red;
   color: white;
-}
-
-.nav {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
-}
-
-.nav button {
-  background: rgba(255, 255, 255, 0.12);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .hidden {
   display: none;
 }
 
+/* CONTENT */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  margin-top: 20px;
+}
+
+.nav button {
+  margin-right: 10px;
+}
+
 .page {
-  animation: fade 0.25s ease;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.box,
-.list-item,
-.note {
-  background: rgba(255, 255, 255, 0.09);
-  border: 1px solid rgba(255, 255, 255, 0.13);
-  border-radius: 20px;
+  margin-top: 20px;
   padding: 20px;
-}
-
-.box span {
-  font-size: 12px;
-  color: #a78bfa;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.box h4,
-.list-item h4,
-.note h4 {
-  margin: 10px 0;
-}
-
-.box p,
-.list-item p,
-.note p,
-.topbar p {
-  color: #cfcfcf;
-  line-height: 1.5;
-}
-
-.list,
-.note {
-  margin-top: 14px;
-}
-
-.list {
-  display: grid;
-  gap: 14px;
-}
-
-.note {
-  margin-bottom: 14px;
-}
-
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 750px) {
-  h1 {
-    font-size: 38px;
-  }
-
-  .topbar {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  input {
-    width: 100%;
-    margin-bottom: 10px;
-  }
+  background: #1c1c1c;
+  border-radius: 12px;
 }

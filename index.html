@@ -7,7 +7,21 @@
 </head>
 <body>
 
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <h2 class="logo">PELLE</h2>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <div id="menu" class="menu hidden">
+      <p>Account</p>
+      <p>Einstellungen</p>
+      <p>Support</p>
+    </div>
+  </header>
+
   <main class="app">
+
     <section class="hero">
       <p class="tag">PELLE SYSTEM</p>
       <h1>Pelle Baukasten</h1>
@@ -21,10 +35,7 @@
 
     <section id="content" class="hidden">
       <div class="topbar">
-        <div>
-          <h2>Willkommen Pelle 🔥</h2>
-          <p>Dein privates Website-System.</p>
-        </div>
+        <h2>Willkommen Pelle 🔥</h2>
         <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
 
@@ -36,67 +47,19 @@
 
       <div id="dashboard" class="page">
         <h3>Dashboard</h3>
-
-        <div class="grid">
-          <div class="box">
-            <span>Status</span>
-            <h4>Online</h4>
-            <p>Deine Website ist live und erreichbar.</p>
-          </div>
-
-          <div class="box">
-            <span>Ziel</span>
-            <h4>Website-Business</h4>
-            <p>Später sollen hier deine Angebote und Pakete stehen.</p>
-          </div>
-
-          <div class="box">
-            <span>Nächster Schritt</span>
-            <h4>Design verbessern</h4>
-            <p>Wir bauen die Seite Schritt für Schritt professioneller.</p>
-          </div>
-        </div>
+        <p>Alles läuft 🔥</p>
       </div>
 
       <div id="projekte" class="page hidden">
         <h3>Projekte</h3>
-
-        <div class="list">
-          <div class="list-item">
-            <h4>Pelle Baukasten</h4>
-            <p>Deine eigene Website – aktuell in Entwicklung.</p>
-          </div>
-
-          <div class="list-item">
-            <h4>Kunden-Websites</h4>
-            <p>Hier kommen später Websites rein, die du für andere baust.</p>
-          </div>
-
-          <div class="list-item">
-            <h4>Portfolio</h4>
-            <p>Später zeigst du hier fertige Beispiele deiner Arbeit.</p>
-          </div>
-        </div>
+        <p>Hier kommen Projekte rein.</p>
       </div>
 
       <div id="notizen" class="page hidden">
         <h3>Notizen</h3>
-
-        <div class="note">
-          <h4>Idee 1</h4>
-          <p>Website-Pakete für kleine Unternehmer anbieten.</p>
-        </div>
-
-        <div class="note">
-          <h4>Idee 2</h4>
-          <p>Preise, Leistungen und Beispiele sauber aufbauen.</p>
-        </div>
-
-        <div class="note">
-          <h4>Idee 3</h4>
-          <p>Später Kontaktformular und echte Angebotsseite hinzufügen.</p>
-        </div>
+        <p>Hier kommen Notizen rein.</p>
       </div>
+
     </section>
   </main>
 
