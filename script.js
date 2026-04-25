@@ -1,56 +1,103 @@
 let cart = [];
 
 function toggleMenu() {
-  document.getElementById("menu").classList.toggle("hidden");
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("hidden");
 }
 
 function showPage(id) {
-  document.querySelectorAll(".page").forEach(p => p.classList.add("hidden"));
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(function(page) {
+    page.classList.add("hidden");
+  });
+
   document.getElementById(id).classList.remove("hidden");
+
+  const menu = document.getElementById("menu");
+  menu.classList.add("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 function addToCart(name, price) {
-  cart.push({name,price});
+  cart.push({
+    name: name,
+    price: price
+  });
+
   updateCart();
+  showPage("cart");
 }
 
 function updateCart() {
-  const items = document.getElementById("cartItems");
+  const cartItems = document.getElementById("cartItems");
   const total = document.getElementById("total");
+  const cartCount = document.getElementById("cartCount");
 
-  items.innerHTML = "";
+  cartItems.innerHTML = "";
+
   let sum = 0;
 
-  cart.forEach((item, i) => {
+  if (cart.length === 0) {
+    cartItems.innerHTML = "<p>Dein Warenkorb ist aktuell leer.</p>";
+  }
+
+  cart.forEach(function(item, index) {
     sum += item.price;
 
-    items.innerHTML += `
-      <div>
-        ${item.name} - ${item.price} €
-        <button onclick="removeItem(${i})">X</button>
+    cartItems.innerHTML += `
+      <div class="cart-item">
+        <div>
+          <strong>${item.name}</strong>
+          <span>${item.price} €</span>
+        </div>
+        <button class="danger" onclick="removeItem(${index})">Entfernen</button>
       </div>
     `;
   });
 
-  document.getElementById("cartCount").textContent = cart.length;
   total.textContent = sum;
+  cartCount.textContent = cart.length;
 }
 
-function removeItem(i) {
-  cart.splice(i,1);
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+function clearCart() {
+  cart = [];
   updateCart();
 }
 
 function checkout() {
-  alert("Checkout kommt später");
+  if (cart.length === 0) {
+    alert("Dein Warenkorb ist leer.");
+    return;
+  }
+
+  alert("Checkout kommt später. Aktuell ist das noch ein Test-Warenkorb.");
 }
 
 function login() {
-  if(document.getElementById("pw").value === "1234") {
-    document.getElementById("admin").classList.remove("hidden");
+  const password = document.getElementById("pw").value;
+
+  if (password === "1234") {
+    document.getElementById("loginArea").classList.add("hidden");
+    document.getElementById("adminArea").classList.remove("hidden");
+  } else {
+    alert("Falsches Passwort.");
   }
 }
 
 function logout() {
-  document.getElementById("admin").classList.add("hidden");
+  document.getElementById("adminArea").classList.add("hidden");
+  document.getElementById("loginArea").classList.remove("hidden");
+  document.getElementById("pw").value = "";
 }
+
+updateCart();

@@ -2,126 +2,244 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Future Webuild</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-  <div class="brand">Future Webuild</div>
-
-  <div class="header-actions">
-    <button onclick="showPage('cart')">🛒 <span id="cartCount">0</span></button>
-    <button onclick="toggleMenu()">☰</button>
+  <div class="brand" onclick="showPage('home')">
+    <span class="brand-mark">FW</span>
+    <span>Future Webuild</span>
   </div>
 
-  <div id="menu" class="menu hidden">
+  <div class="header-actions">
+    <button class="nav-link" onclick="showPage('home')">Start</button>
+    <button class="nav-link" onclick="showPage('packages')">Pakete</button>
+    <button class="cart-button" onclick="showPage('cart')">🛒 <span id="cartCount">0</span></button>
+    <button class="menu-button" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div id="menu" class="dropdown hidden">
     <p onclick="showPage('account')">Account</p>
     <p onclick="showPage('settings')">Einstellungen</p>
     <p onclick="showPage('support')">Support</p>
     <p onclick="showPage('about')">Über uns</p>
+    <p onclick="showPage('adminLogin')">Admin Login</p>
   </div>
 </header>
 
 <main class="container">
 
-<!-- STARTSEITE -->
-<section id="home" class="page">
-  <h1>Moderne Websites für kleine Unternehmen</h1>
-  <p>Ich baue einfache, moderne und günstige Websites für Selbstständige, Vereine und kleine Businesses.</p>
+  <section id="home" class="page">
+    <div class="hero">
+      <p class="eyebrow">WEBDESIGN FÜR DEN START</p>
+      <h1>Moderne Websites für kleine Unternehmen – bezahlbar, sauber und persönlich.</h1>
+      <p class="hero-text">
+        Future Webuild hilft Selbstständigen, kleinen Unternehmen, Vereinen und Projekten dabei,
+        professionell online sichtbar zu werden – ohne riesiges Budget.
+      </p>
 
-  <h2>Pakete</h2>
+      <div class="hero-actions">
+        <button class="primary" onclick="showPage('packages')">Pakete ansehen</button>
+        <button class="secondary" onclick="showPage('support')">Kontakt aufnehmen</button>
+      </div>
 
-  <div class="packages">
-
-    <div class="package">
-      <h3>Starter</h3>
-      <p class="price">29 €</p>
-      <ul>
-        <li>1 Seite</li>
-        <li>Modernes Design</li>
-        <li>Mobile Ansicht</li>
-      </ul>
-      <button onclick="addToCart('Starter',29)">In den Warenkorb</button>
+      <div class="hero-stats">
+        <div>
+          <strong>3</strong>
+          <span>Startpakete</span>
+        </div>
+        <div>
+          <strong>100%</strong>
+          <span>mobil optimiert geplant</span>
+        </div>
+        <div>
+          <strong>fair</strong>
+          <span>Einsteigerpreise</span>
+        </div>
+      </div>
     </div>
 
-    <div class="package highlight">
-      <h3>Basic</h3>
-      <p class="price">59 €</p>
-      <ul>
-        <li>Mehrere Bereiche</li>
-        <li>Kontaktbereich</li>
-        <li>Besseres Design</li>
-      </ul>
-      <button onclick="addToCart('Basic',59)">In den Warenkorb</button>
+    <div class="section">
+      <h2>Warum Future Webuild?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Günstiger Einstieg</h3>
+          <p>Da Future Webuild noch im Aufbau ist, sind die Preise bewusst fair gehalten.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Persönliche Umsetzung</h3>
+          <p>Keine anonyme Agentur. Du bekommst direkte Kommunikation und klare Absprachen.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Moderner Look</h3>
+          <p>Deine Website soll nicht wie eine alte Vorlage aussehen, sondern frisch und sauber.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="package">
-      <h3>Plus</h3>
-      <p class="price">99 €</p>
-      <ul>
-        <li>Mehr Seiten</li>
-        <li>Individuelles Design</li>
-        <li>Beratung</li>
-      </ul>
-      <button onclick="addToCart('Plus',99)">In den Warenkorb</button>
+    <div class="section process-section">
+      <h2>So läuft es ab</h2>
+      <div class="steps">
+        <div class="step"><span>01</span><h3>Anfrage</h3><p>Du sagst, was du brauchst.</p></div>
+        <div class="step"><span>02</span><h3>Planung</h3><p>Wir klären Seiten, Inhalte und Stil.</p></div>
+        <div class="step"><span>03</span><h3>Umsetzung</h3><p>Die Website wird Schritt für Schritt gebaut.</p></div>
+        <div class="step"><span>04</span><h3>Übergabe</h3><p>Du bekommst die fertige Version online.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="page hidden">
+    <div class="page-head">
+      <p class="eyebrow">ANGEBOTE</p>
+      <h1>Pakete für deinen Start</h1>
+      <p>Die Preise sind bewusst niedrig, weil Future Webuild aktuell noch Erfahrung und Referenzen aufbaut.</p>
     </div>
 
-  </div>
+    <div class="packages">
+      <div class="package-card">
+        <p class="package-label">Einfacher Start</p>
+        <h2>Starter</h2>
+        <p class="price">29 €</p>
+        <p class="package-desc">Für Personen, die eine kleine Online-Präsenz brauchen.</p>
+        <ul>
+          <li>1 einfache Startseite</li>
+          <li>Grunddesign</li>
+          <li>Mobile Ansicht</li>
+          <li>Texte und Bilder nach Absprache</li>
+          <li>Kein Shop-System</li>
+        </ul>
+        <button class="primary full" onclick="addToCart('Starter Website', 29)">In den Warenkorb</button>
+      </div>
 
-  <div class="trust">
-    <h3>Warum Future Webuild?</h3>
-    <p>Ich bin aktuell im Aufbau und biete deshalb günstige Websites an, um Erfahrung zu sammeln und gleichzeitig echten Mehrwert zu liefern.</p>
+      <div class="package-card popular">
+        <div class="badge">Empfohlen</div>
+        <p class="package-label">Bester Einstieg</p>
+        <h2>Basic</h2>
+        <p class="price">59 €</p>
+        <p class="package-desc">Für kleine Unternehmen, die seriöser online auftreten wollen.</p>
+        <ul>
+          <li>Mehrere Bereiche auf einer Seite</li>
+          <li>Leistungsbereich</li>
+          <li>Kontaktbereich</li>
+          <li>Besseres Design</li>
+          <li>1 Korrekturrunde</li>
+        </ul>
+        <button class="primary full" onclick="addToCart('Basic Website', 59)">In den Warenkorb</button>
+      </div>
 
-    <h3>So läuft es ab</h3>
-    <p>1. Du meldest dich<br>
-       2. Wir besprechen deine Website<br>
-       3. Ich baue sie für dich<br>
-       4. Du bekommst deine fertige Website</p>
-  </div>
+      <div class="package-card">
+        <p class="package-label">Mehr Feinschliff</p>
+        <h2>Plus</h2>
+        <p class="price">99 €</p>
+        <p class="package-desc">Für Projekte, die etwas hochwertiger wirken sollen.</p>
+        <ul>
+          <li>Mehr Inhalte und Abschnitte</li>
+          <li>Individuellere Optik</li>
+          <li>Beratung zur Struktur</li>
+          <li>2 Korrekturrunden</li>
+          <li>Vorbereitung für spätere Erweiterungen</li>
+        </ul>
+        <button class="primary full" onclick="addToCart('Plus Website', 99)">In den Warenkorb</button>
+      </div>
+    </div>
 
-</section>
+    <div class="notice">
+      <h3>Wichtig</h3>
+      <p>
+        Das sind Einsteigerpreise. Domain, Hosting, professionelle Texte, Logos oder große Shop-Systeme
+        sind nicht automatisch enthalten und werden später separat geklärt.
+      </p>
+    </div>
+  </section>
 
-<!-- WARENKORB -->
-<section id="cart" class="page hidden">
-  <h2>Warenkorb</h2>
-  <div id="cartItems"></div>
-  <h3>Gesamt: <span id="total">0</span> €</h3>
-  <button onclick="checkout()">Checkout</button>
-</section>
+  <section id="cart" class="page hidden">
+    <div class="page-head">
+      <p class="eyebrow">WARENKORB</p>
+      <h1>Deine Auswahl</h1>
+      <p>Aktuell ist der Warenkorb noch ein Test. Echter Checkout und Zahlung kommen später.</p>
+    </div>
 
-<!-- MENÜ SEITEN -->
-<section id="account" class="page hidden">
-  <h2>Account</h2>
-  <p>Hier kommt später dein Account-Bereich.</p>
-</section>
+    <div class="cart-layout">
+      <div class="cart-box">
+        <div id="cartItems"></div>
+      </div>
 
-<section id="settings" class="page hidden">
-  <h2>Einstellungen</h2>
-  <p>Hier kannst du später Einstellungen ändern.</p>
-</section>
+      <div class="summary-box">
+        <h2>Zusammenfassung</h2>
+        <p>Gesamt:</p>
+        <h3><span id="total">0</span> €</h3>
+        <button class="primary full" onclick="checkout()">Checkout starten</button>
+        <button class="secondary full" onclick="clearCart()">Warenkorb leeren</button>
+      </div>
+    </div>
+  </section>
 
-<section id="support" class="page hidden">
-  <h2>Support</h2>
-  <p>Kontakt: deine@email.de</p>
-</section>
+  <section id="about" class="page hidden content-page">
+    <h1>Über Future Webuild</h1>
+    <p>
+      Future Webuild ist ein junges Webdesign-Projekt mit dem Ziel, bezahlbare und moderne Websites
+      für kleine Unternehmen und Selbstständige zu bauen.
+    </p>
+    <p>
+      Der Fokus liegt aktuell auf einfachen, sauberen Websites, die professionell wirken und später
+      erweitert werden können.
+    </p>
+  </section>
 
-<section id="about" class="page hidden">
-  <h2>Über uns</h2>
-  <p>Future Webuild erstellt moderne Websites für kleine Unternehmen.</p>
-</section>
+  <section id="support" class="page hidden content-page">
+    <h1>Support</h1>
+    <p>Hier kommt später deine geschäftliche Kontaktmöglichkeit rein.</p>
+    <div class="support-card">
+      <h3>Kontakt</h3>
+      <p>E-Mail: <strong>deine-email@beispiel.de</strong></p>
+      <p>Antwortzeit: nach Absprache</p>
+    </div>
+  </section>
 
-<!-- LOGIN -->
-<section id="login" class="page">
-  <h2>Admin Login</h2>
-  <input type="password" id="pw">
-  <button onclick="login()">Einloggen</button>
+  <section id="account" class="page hidden content-page">
+    <h1>Account</h1>
+    <p>Später können Kunden hier ihre Bestellung, Projektinfos oder Accountdaten sehen.</p>
+  </section>
 
-  <div id="admin" class="hidden">
-    <h3>Admin Bereich</h3>
-    <button onclick="logout()">Logout</button>
-  </div>
-</section>
+  <section id="settings" class="page hidden content-page">
+    <h1>Einstellungen</h1>
+    <p>Später kommen hier Sprache, Designmodus, Benachrichtigungen oder Account-Optionen rein.</p>
+  </section>
+
+  <section id="adminLogin" class="page hidden content-page">
+    <h1>Admin Login</h1>
+    <p>Dieser Bereich bleibt während der Testphase geschützt.</p>
+
+    <div id="loginArea" class="login-box">
+      <input type="password" id="pw" placeholder="Passwort eingeben">
+      <button class="primary" onclick="login()">Einloggen</button>
+    </div>
+
+    <div id="adminArea" class="admin hidden">
+      <div class="admin-top">
+        <h2>Admin-Bereich</h2>
+        <button class="danger" onclick="logout()">Logout</button>
+      </div>
+
+      <div class="admin-grid">
+        <div class="feature-card">
+          <h3>Status</h3>
+          <p>Website online und in Entwicklung.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Nächster Schritt</h3>
+          <p>Design, Inhalte, Vertrauen und Kontaktbereich verbessern.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Notiz</h3>
+          <p>Später Kunden, Aufträge und Ideen speichern.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
