@@ -7,42 +7,97 @@
 </head>
 <body>
 
-  <main class="card">
-    <h1>Pelle Baukasten</h1>
-    <p id="subtitle">Private Website – nur für dich</p>
+  <main class="app">
+    <section class="hero">
+      <p class="tag">PELLE SYSTEM</p>
+      <h1>Pelle Baukasten</h1>
+      <p id="subtitle">Private Website – nur für dich</p>
 
-    <div id="loginArea" class="login-area">
-      <input type="password" id="pw" placeholder="Passwort">
-      <button onclick="login()">Einloggen</button>
-    </div>
+      <div id="loginArea" class="login-area">
+        <input type="password" id="pw" placeholder="Passwort">
+        <button onclick="login()">Einloggen</button>
+      </div>
+    </section>
 
-    <div id="content" class="hidden">
+    <section id="content" class="hidden">
       <div class="topbar">
-        <h2>Willkommen Pelle 🔥</h2>
+        <div>
+          <h2>Willkommen Pelle 🔥</h2>
+          <p>Dein privates Website-System.</p>
+        </div>
         <button class="logout-btn" onclick="logout()">Logout</button>
       </div>
 
-      <div class="button-row">
+      <nav class="nav">
         <button onclick="showPage('dashboard')">Dashboard</button>
         <button onclick="showPage('projekte')">Projekte</button>
         <button onclick="showPage('notizen')">Notizen</button>
-      </div>
+      </nav>
 
       <div id="dashboard" class="page">
         <h3>Dashboard</h3>
-        <p>Das ist dein privater Bereich.</p>
+
+        <div class="grid">
+          <div class="box">
+            <span>Status</span>
+            <h4>Online</h4>
+            <p>Deine Website ist live und erreichbar.</p>
+          </div>
+
+          <div class="box">
+            <span>Ziel</span>
+            <h4>Website-Business</h4>
+            <p>Später sollen hier deine Angebote und Pakete stehen.</p>
+          </div>
+
+          <div class="box">
+            <span>Nächster Schritt</span>
+            <h4>Design verbessern</h4>
+            <p>Wir bauen die Seite Schritt für Schritt professioneller.</p>
+          </div>
+        </div>
       </div>
 
       <div id="projekte" class="page hidden">
         <h3>Projekte</h3>
-        <p>Hier kommen später deine Website-Projekte rein.</p>
+
+        <div class="list">
+          <div class="list-item">
+            <h4>Pelle Baukasten</h4>
+            <p>Deine eigene Website – aktuell in Entwicklung.</p>
+          </div>
+
+          <div class="list-item">
+            <h4>Kunden-Websites</h4>
+            <p>Hier kommen später Websites rein, die du für andere baust.</p>
+          </div>
+
+          <div class="list-item">
+            <h4>Portfolio</h4>
+            <p>Später zeigst du hier fertige Beispiele deiner Arbeit.</p>
+          </div>
+        </div>
       </div>
 
       <div id="notizen" class="page hidden">
         <h3>Notizen</h3>
-        <p>Hier kannst du später Ideen, Preise und Kundeninfos sammeln.</p>
+
+        <div class="note">
+          <h4>Idee 1</h4>
+          <p>Website-Pakete für kleine Unternehmer anbieten.</p>
+        </div>
+
+        <div class="note">
+          <h4>Idee 2</h4>
+          <p>Preise, Leistungen und Beispiele sauber aufbauen.</p>
+        </div>
+
+        <div class="note">
+          <h4>Idee 3</h4>
+          <p>Später Kontaktformular und echte Angebotsseite hinzufügen.</p>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
   <script src="script.js"></script>
