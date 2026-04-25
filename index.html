@@ -2,85 +2,123 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>Pelle Baukasten</title>
+  <title>Future Webuild</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <h2 class="logo">PELLE</h2>
+  <header class="header">
+    <div class="brand">Future Webuild</div>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="header-actions">
+      <button class="cart-btn" onclick="toggleCart()">🛒 <span id="cartCount">0</span></button>
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </div>
 
-    <div id="menu" class="menu hidden">
-      <p onclick="openMenuPage('account')">Account</p>
-      <p onclick="openMenuPage('settings')">Einstellungen</p>
-      <p onclick="openMenuPage('support')">Support</p>
+    <div id="menu" class="dropdown hidden">
+      <p onclick="showInfo('account')">Account</p>
+      <p onclick="showInfo('settings')">Einstellungen</p>
+      <p onclick="showInfo('support')">Support</p>
+      <p onclick="showInfo('about')">Über uns</p>
     </div>
   </header>
 
-  <main class="app">
+  <div id="cartPanel" class="cart-panel hidden">
+    <h3>Warenkorb</h3>
+    <div id="cartItems"></div>
+    <p class="total">Gesamt: <span id="cartTotal">0</span> €</p>
+    <button onclick="checkout()">Checkout</button>
+  </div>
 
-    <!-- LOGIN -->
+  <main class="container">
+
     <section class="hero">
-      <h1>Pelle Baukasten</h1>
-      <p id="subtitle">Private Website – nur für dich</p>
+      <p class="tag">WEBSITES FÜR DEIN BUSINESS</p>
+      <h1>Moderne Websites, einfach und bezahlbar.</h1>
+      <p>Future Webuild erstellt Websites für kleine Unternehmen, Selbstständige und Menschen, die professionell online sichtbar werden wollen.</p>
+    </section>
 
-      <div id="loginArea" class="login-area">
+    <section class="packages">
+      <div class="package">
+        <h2>Starter</h2>
+        <p class="price">49 €</p>
+        <ul>
+          <li>1 einfache Startseite</li>
+          <li>Modernes Design</li>
+          <li>Mobile Ansicht</li>
+          <li>Grundstruktur</li>
+        </ul>
+        <button onclick="addToCart('Starter Website', 49)">In den Warenkorb</button>
+      </div>
+
+      <div class="package highlight">
+        <h2>Business</h2>
+        <p class="price">149 €</p>
+        <ul>
+          <li>Mehrere Bereiche</li>
+          <li>Professioneller Aufbau</li>
+          <li>Kontaktbereich</li>
+          <li>Individuelle Anpassung</li>
+        </ul>
+        <button onclick="addToCart('Business Website', 149)">In den Warenkorb</button>
+      </div>
+
+      <div class="package">
+        <h2>Premium</h2>
+        <p class="price">299 €</p>
+        <ul>
+          <li>Mehr Seiten</li>
+          <li>Premium Design</li>
+          <li>Beratung inklusive</li>
+          <li>Mehr Feinschliff</li>
+        </ul>
+        <button onclick="addToCart('Premium Website', 299)">In den Warenkorb</button>
+      </div>
+    </section>
+
+    <section class="login-section">
+      <h2>Privater Bereich</h2>
+      <p id="subtitle">Testphase – Login bleibt erstmal aktiv.</p>
+
+      <div id="loginArea">
         <input type="password" id="pw" placeholder="Passwort">
         <button onclick="login()">Einloggen</button>
       </div>
+
+      <div id="adminArea" class="admin hidden">
+        <div class="admin-top">
+          <h3>Admin-Bereich</h3>
+          <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="admin-nav">
+          <button onclick="showAdminPage('dashboard')">Dashboard</button>
+          <button onclick="showAdminPage('projekte')">Projekte</button>
+          <button onclick="showAdminPage('notizen')">Notizen</button>
+        </div>
+
+        <div id="dashboard" class="admin-page">
+          <h4>Dashboard</h4>
+          <p>Website ist online. Nächster Schritt: Design und Funktionen verbessern.</p>
+        </div>
+
+        <div id="projekte" class="admin-page hidden">
+          <h4>Projekte</h4>
+          <p>Hier kommen später Kundenprojekte rein.</p>
+        </div>
+
+        <div id="notizen" class="admin-page hidden">
+          <h4>Notizen</h4>
+          <p>Hier kannst du Ideen, Preise und Aufgaben sammeln.</p>
+        </div>
+      </div>
     </section>
 
-    <!-- CONTENT -->
-    <section id="content" class="hidden">
-
-      <div class="topbar">
-        <h2>Willkommen Pelle 🔥</h2>
-        <button class="logout-btn" onclick="logout()">Logout</button>
-      </div>
-
-      <!-- NAV -->
-      <nav class="nav">
-        <button onclick="showPage('dashboard')">Dashboard</button>
-        <button onclick="showPage('projekte')">Projekte</button>
-        <button onclick="showPage('notizen')">Notizen</button>
-      </nav>
-
-      <!-- HAUPTSEITEN -->
-      <div id="dashboard" class="page">
-        <h3>Dashboard</h3>
-        <p>Alles läuft perfekt 🔥</p>
-      </div>
-
-      <div id="projekte" class="page hidden">
-        <h3>Projekte</h3>
-        <p>Hier kommen deine Projekte rein.</p>
-      </div>
-
-      <div id="notizen" class="page hidden">
-        <h3>Notizen</h3>
-        <p>Hier kommen deine Notizen rein.</p>
-      </div>
-
-      <!-- MENU SEITEN -->
-      <div id="account" class="page hidden">
-        <h3>Account</h3>
-        <p>Hier kommen später Account-Daten rein.</p>
-      </div>
-
-      <div id="settings" class="page hidden">
-        <h3>Einstellungen</h3>
-        <p>Hier kannst du später Einstellungen ändern.</p>
-      </div>
-
-      <div id="support" class="page hidden">
-        <h3>Support</h3>
-        <p>Kontakt: deine@email.de</p>
-      </div>
-
+    <section id="infoBox" class="info-box hidden">
+      <h2 id="infoTitle"></h2>
+      <p id="infoText"></p>
     </section>
+
   </main>
 
   <script src="script.js"></script>
