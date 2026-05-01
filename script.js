@@ -1,8 +1,12 @@
 let cart = [];
 
 function toggleMenu() {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("hidden");
+  document.getElementById("menuDropdown").classList.toggle("hidden");
+}
+
+function showPageFromMenu(id) {
+  document.getElementById("menuDropdown").classList.add("hidden");
+  showPage(id);
 }
 
 function showPage(id) {
@@ -13,7 +17,11 @@ function showPage(id) {
   });
 
   document.getElementById(id).classList.remove("hidden");
-  document.getElementById("menu").classList.add("hidden");
+
+  const menu = document.getElementById("menuDropdown");
+  if (menu) {
+    menu.classList.add("hidden");
+  }
 
   window.scrollTo({
     top: 0,
@@ -34,7 +42,6 @@ function addToCart(name, price) {
 function updateCart() {
   const cartItems = document.getElementById("cartItems");
   const total = document.getElementById("total");
-  const cartCount = document.getElementById("cartCount");
 
   cartItems.innerHTML = "";
 
@@ -50,16 +57,15 @@ function updateCart() {
     cartItems.innerHTML += `
       <div class="cart-item">
         <div>
-          <strong>${item.name}</strong>
+          <strong>${item.name}</strong><br>
           <span>${item.price} €</span>
         </div>
-        <button class="danger" onclick="removeItem(${index})">Entfernen</button>
+        <button class="danger-btn" onclick="removeItem(${index})">Entfernen</button>
       </div>
     `;
   });
 
   total.textContent = sum;
-  cartCount.textContent = cart.length;
 }
 
 function removeItem(index) {
@@ -87,11 +93,15 @@ function sendRequest(event) {
   const name = document.getElementById("name").value;
   const packageChoice = document.getElementById("packageChoice").value;
 
-  alert("Danke " + name + "! Deine Anfrage für " + packageChoice + " wurde vorbereitet. Echter Versand kommt später.");
+  alert("Danke " + name + "! Deine Anfrage für " + packageChoice + " wurde vorbereitet.");
 
   document.getElementById("name").value = "";
   document.getElementById("email").value = "";
   document.getElementById("message").value = "";
+}
+
+function openCafe() {
+  window.open("https://cafe-demo-7mk4.onrender.com", "_blank");
 }
 
 function login() {
@@ -109,6 +119,10 @@ function logout() {
   document.getElementById("adminArea").classList.add("hidden");
   document.getElementById("loginArea").classList.remove("hidden");
   document.getElementById("pw").value = "";
+}
+
+function hideCookies() {
+  document.getElementById("cookieBanner").classList.add("hidden");
 }
 
 updateCart();
