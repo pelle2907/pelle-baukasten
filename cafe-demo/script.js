@@ -1,4 +1,29 @@
-function showPage(id){
-document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
-document.getElementById(id).classList.remove("hidden");
+function showPage(pageId) {
+  const pages = document.querySelectorAll(".page");
+
+  pages.forEach(function(page) {
+    page.classList.add("hidden");
+  });
+
+  document.getElementById(pageId).classList.remove("hidden");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+function sendReservation(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+
+  alert("Danke " + name + "! Deine Reservierungsanfrage wurde vorbereitet.");
+
+  document.getElementById("name").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("date").value = "";
+  document.getElementById("time").value = "";
+  document.getElementById("people").value = "";
+  document.getElementById("message").value = "";
 }
