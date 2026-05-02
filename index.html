@@ -11,12 +11,12 @@
 <div id="cookieBanner" class="cookie-banner">
   <div>
     <strong>Cookies & Datenschutz</strong>
-    <p>Diese Website nutzt aktuell keine Tracking-Cookies. Das Banner ist vorbereitet für spätere Erweiterungen.</p>
+    <p>Diese Website nutzt aktuell keine Tracking-Cookies. Das Banner ist für spätere Erweiterungen vorbereitet.</p>
   </div>
   <div class="cookie-actions">
-    <button onclick="hideCookies()" class="soft-btn">Ablehnen</button>
-    <button onclick="hideCookies()" class="soft-btn">Einstellen</button>
-    <button onclick="hideCookies()" class="primary-btn">Akzeptieren</button>
+    <button class="soft-btn" onclick="hideCookies()">Ablehnen</button>
+    <button class="soft-btn" onclick="hideCookies()">Einstellen</button>
+    <button class="primary-btn" onclick="hideCookies()">Akzeptieren</button>
   </div>
 </div>
 
@@ -24,7 +24,7 @@
   <div class="brand" onclick="showPage('home')">Future Webuild</div>
 
   <div class="header-actions">
-    <button class="cart-clean-btn" onclick="showPage('cart')" aria-label="Warenkorb">
+    <button class="cart-btn" onclick="showPage('cart')" aria-label="Warenkorb">
       <svg viewBox="0 0 24 24" class="bag-icon">
         <path d="M6 8h12l-1 12H7L6 8Z"></path>
         <path d="M9 8V6a3 3 0 0 1 6 0v2"></path>
@@ -36,10 +36,11 @@
   </div>
 
   <div id="menuDropdown" class="menu-dropdown hidden">
-    <button onclick="showPageFromMenu('contact')" data-de="Kontakt" data-en="Contact">Kontakt</button>
-    <button onclick="showPageFromMenu('about')" data-de="Über uns" data-en="About">Über uns</button>
-    <button onclick="showPageFromMenu('language')" data-de="Sprache" data-en="Language">Sprache</button>
-    <button onclick="showPageFromMenu('orders')" data-de="Bestellungen" data-en="Orders">Bestellungen</button>
+    <button onclick="showPageFromMenu('packages')">Pakete</button>
+    <button onclick="showPageFromMenu('portfolio')">Portfolio</button>
+    <button onclick="showPageFromMenu('about')">Über uns</button>
+    <button onclick="showPageFromMenu('contact')">Kontakt</button>
+    <button onclick="showPageFromMenu('orders')">Bestellungen</button>
   </div>
 </header>
 
@@ -47,115 +48,91 @@
 
 <section id="home" class="page">
   <div class="hero">
-    <div class="hero-left">
-      <p class="eyebrow" data-de="WEBDESIGN · ONLINE-SHOPS · DIGITALE AUFTRITTE" data-en="WEBDESIGN · ONLINE STORES · DIGITAL PRESENCE">
-        WEBDESIGN · ONLINE-SHOPS · DIGITALE AUFTRITTE
-      </p>
-
-      <h1 data-de="Websites, die nicht nur gut aussehen – sondern Vertrauen aufbauen und Kunden bringen."
-          data-en="Websites that do more than look good — they build trust and bring customers.">
-        Websites, die nicht nur gut aussehen – sondern Vertrauen aufbauen und Kunden bringen.
-      </h1>
-
-      <p class="hero-text" data-de="Future Webuild erstellt moderne Websites und einfache Online-Shops für kleine Unternehmen, Selbstständige und Projekte, die professionell online starten wollen."
-         data-en="Future Webuild builds modern websites and simple online stores for small businesses, freelancers and projects that want to start professionally online.">
-        Future Webuild erstellt moderne Websites und einfache Online-Shops für kleine Unternehmen, Selbstständige und Projekte, die professionell online starten wollen.
+    <div class="hero-content">
+      <p class="eyebrow">WEBDESIGN · ONLINE-SHOPS · DIGITALE AUFTRITTE</p>
+      <h1>Websites, die professionell wirken und echte Anfragen bringen.</h1>
+      <p class="hero-text">
+        Future Webuild erstellt moderne Websites und einfache Online-Shops für kleine Unternehmen,
+        Selbstständige und Projekte, die online seriös auftreten wollen.
       </p>
 
       <div class="hero-actions">
-        <button class="primary-btn" onclick="showPage('packages')" data-de="Pakete ansehen" data-en="View packages">Pakete ansehen</button>
-        <button class="secondary-btn" onclick="showPage('portfolio')" data-de="Portfolio ansehen" data-en="View portfolio">Portfolio ansehen</button>
+        <button class="primary-btn" onclick="showPage('packages')">Pakete ansehen</button>
+        <button class="secondary-btn" onclick="showPage('portfolio')">Portfolio ansehen</button>
       </div>
 
-      <div class="hero-trust">
+      <div class="trust-row">
         <div>
           <strong>01</strong>
-          <span data-de="Premium Look" data-en="Premium look">Premium Look</span>
+          <span>modernes Design</span>
         </div>
         <div>
           <strong>02</strong>
-          <span data-de="klare Struktur" data-en="clear structure">klare Struktur</span>
+          <span>faire Einstiegspreise</span>
         </div>
         <div>
           <strong>03</strong>
-          <span data-de="echte Anfragefunktion" data-en="real inquiry system">echte Anfragefunktion</span>
+          <span>aktive Anfragefunktion</span>
         </div>
       </div>
     </div>
 
-    <div class="hero-right">
-      <div class="website-preview">
-        <div class="browser-top">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="preview-body">
-          <p class="preview-label">LIVE SHOWCASE</p>
-          <h3>Future Webuild</h3>
-          <p>Website · Shop · Portfolio · Anfrage · Bestellung</p>
-
-          <div class="preview-grid">
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-
-          <button onclick="showPage('contact')" data-de="Projekt starten" data-en="Start project">Projekt starten</button>
-        </div>
-      </div>
+    <div class="hero-card">
+      <p>Fertiges Demo-Projekt</p>
+      <h2>Café Milano</h2>
+      <span>Speisekarte mit Bildern</span>
+      <span>Reservierung</span>
+      <span>Kontaktbereich</span>
+      <button onclick="openCafe()">Projekt ansehen</button>
     </div>
   </div>
 
   <section class="section">
     <div class="section-head">
-      <p class="eyebrow">WARUM FUTURE WEBUILD?</p>
-      <h2>Eine gute Website verkauft nicht laut. Sie wirkt seriös, klar und hochwertig.</h2>
+      <p class="eyebrow">WAS FUTURE WEBUILD MACHT</p>
+      <h2>Eine Website soll nicht nur online sein. Sie soll Vertrauen schaffen.</h2>
       <p>
-        Viele kleine Unternehmen brauchen keinen riesigen Konzern-Auftritt, sondern eine Website,
-        die professionell aussieht, Vertrauen schafft und Besucher zu Anfragen macht.
+        Besucher entscheiden schnell, ob eine Seite seriös wirkt. Deshalb braucht deine Website
+        klare Texte, ein hochwertiges Design, gute Struktur und einen einfachen Weg zur Anfrage.
       </p>
     </div>
 
     <div class="cards-grid">
       <div class="info-card">
-        <span>Design</span>
-        <h3>Hochwertiger erster Eindruck</h3>
-        <p>Moderne Layouts, gute Abstände, klare Bereiche und ein Stil, der nicht nach billigem Baukasten aussieht.</p>
+        <span>Websites</span>
+        <h3>Für lokale Unternehmen</h3>
+        <p>Cafés, Friseure, Fitnessstudios, Vereine, Creator, Dienstleister und Selbstständige bekommen einen modernen Auftritt.</p>
       </div>
 
       <div class="info-card">
-        <span>Verkauf</span>
-        <h3>Pakete direkt auswählbar</h3>
-        <p>Kunden können Pakete in den Warenkorb legen und direkt eine Bestellung oder Anfrage absenden.</p>
+        <span>Online-Shops</span>
+        <h3>Für Produkte & Angebote</h3>
+        <p>Einfache Shop-Strukturen mit Produktkarten, Warenkorb und Anfrage-Checkout statt komplizierter Technik.</p>
       </div>
 
       <div class="info-card">
-        <span>Portfolio</span>
-        <h3>Fertige Demo-Projekte</h3>
-        <p>Mit Café Milano ist bereits eine vollständige Demo online, inklusive Karte, Bildern, Kontakt und Reservierung.</p>
+        <span>Anfragen</span>
+        <h3>Direkter Kontakt</h3>
+        <p>Kunden können ein Paket auswählen, in den Warenkorb legen und eine Bestellanfrage absenden.</p>
       </div>
     </div>
   </section>
 
   <section class="section split-section">
     <div>
-      <p class="eyebrow">FERTIGES PORTFOLIO-PROJEKT</p>
-      <h2>Café Milano zeigt, wie hochwertig eine kleine Website wirken kann.</h2>
+      <p class="eyebrow">SO FUNKTIONIERT ES</p>
+      <h2>Einfach starten, sauber abstimmen, professionell online gehen.</h2>
       <p>
-        Die Café-Demo ist nicht nur eine einfache Beispielseite. Sie zeigt, wie ein lokales Unternehmen mit
-        Bildern, Speisekarte, Kontaktbereich und Reservierung professionell präsentiert werden kann.
+        Der Kunde wählt ein Paket, sendet eine Anfrage und danach werden Details persönlich geklärt.
+        Bezahlt wird nicht blind vorher, sondern nach Absprache.
       </p>
-      <button class="primary-btn" onclick="openCafe()">Café Milano ansehen</button>
     </div>
 
-    <div class="showcase-card">
-      <p>Live Demo</p>
-      <h3>Café Milano</h3>
-      <ul>
-        <li>Startseite mit Atmosphäre</li>
-        <li>Karte mit Produktbildern</li>
-        <li>Kontaktbereich</li>
-        <li>Reservierungsfunktion</li>
-      </ul>
+    <div class="process-box">
+      <div><strong>1</strong><span>Paket auswählen</span></div>
+      <div><strong>2</strong><span>Bestellanfrage senden</span></div>
+      <div><strong>3</strong><span>Projekt abstimmen</span></div>
+      <div><strong>4</strong><span>Website erhalten</span></div>
     </div>
   </section>
 </section>
@@ -166,7 +143,7 @@
     <h1>Pakete für Websites und Online-Shops</h1>
     <p>
       Wähle ein Paket aus, lege es in den Warenkorb und sende deine Bestellung als Anfrage ab.
-      Danach melde ich mich bei dir zur Absprache.
+      Danach wird alles persönlich geklärt.
     </p>
   </div>
 
@@ -181,8 +158,8 @@
       <ul>
         <li>1 moderne Startseite</li>
         <li>mobile Ansicht</li>
-        <li>Basis-Design</li>
         <li>Kontaktbereich</li>
+        <li>Basis-Struktur</li>
       </ul>
       <button class="primary-btn full" onclick="addToCart('Starter Website', 29)">In den Warenkorb</button>
     </div>
@@ -192,10 +169,10 @@
       <p class="label">BUSINESS</p>
       <h2>Basic Website</h2>
       <p class="price">59 €</p>
-      <p>Für kleine Unternehmen, die seriöser auftreten wollen.</p>
+      <p>Für kleine Unternehmen, die seriöser wirken wollen.</p>
       <ul>
         <li>mehrere Bereiche</li>
-        <li>professionellere Struktur</li>
+        <li>stärkerer Aufbau</li>
         <li>Portfolio- oder Angebotsbereich</li>
         <li>1 Korrekturrunde</li>
       </ul>
@@ -206,10 +183,10 @@
       <p class="label">PLUS</p>
       <h2>Plus Website</h2>
       <p class="price">99 €</p>
-      <p>Für Projekte mit mehr Inhalt und stärkerem Design.</p>
+      <p>Für Projekte mit mehr Inhalt und besserem Design.</p>
       <ul>
         <li>mehr Abschnitte</li>
-        <li>stärkerer Look</li>
+        <li>individuellere Optik</li>
         <li>Struktur-Beratung</li>
         <li>2 Korrekturrunden</li>
       </ul>
@@ -238,7 +215,7 @@
       <p class="label">SHOP PRO</p>
       <h2>Shop Pro</h2>
       <p class="price">149 €</p>
-      <p>Für einen professionelleren Shop-Auftritt.</p>
+      <p>Für einen stärkeren Shop-Auftritt mit mehr Struktur.</p>
       <ul>
         <li>mehr Produktbereiche</li>
         <li>bessere Shop-Struktur</li>
@@ -250,10 +227,10 @@
   </div>
 
   <div class="notice">
-    <h3>Wichtig zu wissen</h3>
+    <h3>Wichtig</h3>
     <p>
-      Aktuell läuft der Kauf als Bestellanfrage. Das heißt: Du wählst ein Paket aus, sendest die Bestellung ab
-      und danach wird alles persönlich besprochen. Echte Online-Zahlung kann später ergänzt werden.
+      Der Kauf läuft aktuell als Anfrage. Du sendest die Bestellung ab, danach wird das Projekt persönlich abgesprochen.
+      Echte Online-Zahlung kann später ergänzt werden.
     </p>
   </div>
 </section>
@@ -280,32 +257,32 @@
       <p class="eyebrow">FERTIGE DEMO-WEBSITE</p>
       <h2>Café Milano</h2>
       <p>
-        Café Milano zeigt eine fertige Website für ein lokales Café:
-        Startseite, Über-uns-Bereich, Speisekarte mit Bildern, Kontaktbereich und Reservierung.
+        Eine komplette Demo-Website für ein Café mit Startseite, Über-uns-Bereich,
+        Speisekarte mit Produktbildern, Kontaktbereich und Reservierungsfunktion.
       </p>
       <button class="primary-btn" onclick="openCafe()">Projekt ansehen</button>
     </div>
   </div>
 
   <div class="portfolio-card reverse">
-    <div class="portfolio-visual fw-visual">
-      <p>Future Webuild</p>
-      <h2>Die Hauptseite als eigenes Vorzeigeprojekt.</h2>
+    <div class="portfolio-visual next-visual">
+      <p>Nächstes Projekt</p>
+      <h2>Gym Website als zweites Portfolio-Projekt.</h2>
       <div>
-        <span>Pakete</span>
-        <span>Warenkorb</span>
-        <span>Anfrage</span>
+        <span>Fitness</span>
+        <span>Training</span>
+        <span>Mitgliedschaft</span>
       </div>
     </div>
 
     <div class="portfolio-info">
-      <p class="eyebrow">EIGENES PROJEKT</p>
-      <h2>Future Webuild</h2>
+      <p class="eyebrow">GEPLANT</p>
+      <h2>Gym Demo</h2>
       <p>
-        Diese Website zeigt selbst, was angeboten wird: moderne Struktur, klare Pakete,
-        Warenkorb, Bestellanfrage, Sprache und Portfolio.
+        Als nächstes entsteht eine moderne Gym-Website. Damit zeigt Future Webuild
+        nicht nur ruhige Café-Designs, sondern auch starke, energiegeladene Business-Seiten.
       </p>
-      <button class="secondary-btn" onclick="showPage('home')">Startseite ansehen</button>
+      <button class="secondary-btn" onclick="showPage('contact')">Projekt anfragen</button>
     </div>
   </div>
 </section>
@@ -314,7 +291,7 @@
   <div class="page-head">
     <p class="eyebrow">WARENKORB</p>
     <h1>Deine Auswahl</h1>
-    <p>Prüfe deine Auswahl und sende danach deine Bestellung als Anfrage ab.</p>
+    <p>Prüfe deine Pakete und sende danach deine Bestellung als Anfrage ab.</p>
   </div>
 
   <div class="cart-layout">
@@ -327,7 +304,7 @@
       <h2>Zusammenfassung</h2>
       <p>Gesamtbetrag</p>
       <h3><span id="total">0</span> €</h3>
-      <button class="primary-btn full" onclick="showPage('checkout')">Bestellung absenden</button>
+      <button class="primary-btn full" onclick="showPage('checkout')">Bestellung anfragen</button>
       <button class="secondary-btn full" onclick="clearCart()">Warenkorb leeren</button>
     </div>
   </div>
@@ -337,7 +314,7 @@
   <div class="page-head">
     <p class="eyebrow">BESTELLUNG</p>
     <h1>Bestellung als Anfrage absenden</h1>
-    <p>Du bezahlst hier noch nicht online. Die Anfrage geht direkt per E-Mail raus.</p>
+    <p>Du bezahlst hier noch nicht online. Die Anfrage kommt direkt per E-Mail an.</p>
   </div>
 
   <div class="checkout-layout">
@@ -354,7 +331,7 @@
       <input type="hidden" name="order" id="orderInput">
       <input type="hidden" name="total" id="totalInput">
 
-      <button class="primary-btn full" type="submit">Bestellung absenden</button>
+      <button class="primary-btn full" type="submit">Bestellanfrage senden</button>
     </form>
 
     <div class="checkout-side">
@@ -362,6 +339,59 @@
       <div id="checkoutItems"></div>
       <p class="checkout-total">Gesamt: <strong><span id="checkoutTotal">0</span> €</strong></p>
     </div>
+  </div>
+</section>
+
+<section id="about" class="page hidden simple-page">
+  <p class="eyebrow">ÜBER UNS</p>
+  <h1>Future Webuild baut Websites für kleine Projekte mit großem Anspruch.</h1>
+  <p>
+    Future Webuild ist ein junges Webdesign-Projekt für moderne Websites und einfache Online-Shops.
+    Ziel ist es, kleinen Unternehmen, Selbstständigen und neuen Projekten einen bezahlbaren,
+    aber hochwertigen Online-Auftritt zu ermöglichen.
+  </p>
+
+  <div class="about-grid">
+    <div class="info-card">
+      <h3>Für kleine Kunden</h3>
+      <p>Ideal für Cafés, lokale Unternehmen, Vereine, Creator, Dienstleister und Selbstständige.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Faire Einstiegspreise</h3>
+      <p>Die Preise sind bewusst fair, weil Future Webuild im Aufbau ist und mit echten Projekten wachsen soll.</p>
+    </div>
+
+    <div class="info-card">
+      <h3>Persönliche Umsetzung</h3>
+      <p>Direkte Absprache, klare Struktur und Schritt-für-Schritt Verbesserung statt anonymer Massenabfertigung.</p>
+    </div>
+  </div>
+
+  <div class="about-deep">
+    <h2>Warum trotzdem professionell?</h2>
+    <p>
+      Eine gute Website muss nicht direkt tausende Euro kosten. Entscheidend ist, dass Besucher schnell verstehen,
+      was angeboten wird, Vertrauen aufbauen und einfach Kontakt aufnehmen können.
+    </p>
+    <p>
+      Genau darauf konzentriert sich Future Webuild: klare Seiten, moderne Darstellung, saubere Inhalte,
+      funktionierende Kontaktformulare und Demo-Projekte, die zeigen, was möglich ist.
+    </p>
+  </div>
+</section>
+
+<section id="orders" class="page hidden simple-page">
+  <p class="eyebrow">BESTELLUNGEN</p>
+  <h1>Bestellungen</h1>
+  <p>Bestellungen werden aktuell per Formular abgesendet. Ein echtes Kundenkonto kommt später.</p>
+
+  <div class="orders-box">
+    <h3>So funktioniert es aktuell</h3>
+    <p>1. Paket auswählen</p>
+    <p>2. In den Warenkorb legen</p>
+    <p>3. Bestellung als Anfrage absenden</p>
+    <p>4. Persönliche Rückmeldung per E-Mail</p>
   </div>
 </section>
 
@@ -401,70 +431,6 @@
       <div class="mini-note">Welche Inhalte brauchst du?</div>
       <div class="mini-note">Hast du Beispiele, die dir gefallen?</div>
     </div>
-  </div>
-</section>
-
-<section id="about" class="page hidden simple-page">
-  <p class="eyebrow">ÜBER UNS</p>
-  <h1>Future Webuild baut Websites, die kleiner starten – aber professionell wirken.</h1>
-  <p>
-    Future Webuild ist ein junges Webdesign-Projekt für moderne Websites und einfache Online-Shops.
-    Ziel ist es, kleinen Unternehmen, Selbstständigen und neuen Projekten einen bezahlbaren,
-    aber hochwertigen Online-Auftritt zu ermöglichen.
-  </p>
-
-  <div class="about-grid">
-    <div class="info-card">
-      <h3>Für kleine Kunden</h3>
-      <p>Ideal für Cafés, lokale Unternehmen, Vereine, Creator, Dienstleister und Selbstständige.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Faire Einstiegspreise</h3>
-      <p>Die Preise sind bewusst fair, weil Future Webuild im Aufbau ist und mit echten Projekten wachsen soll.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Persönliche Umsetzung</h3>
-      <p>Keine anonyme Agentur. Direkte Absprache, klare Struktur und Schritt-für-Schritt Verbesserung.</p>
-    </div>
-  </div>
-
-  <div class="about-deep">
-    <h2>Warum trotzdem professionell?</h2>
-    <p>
-      Eine gute Website muss nicht direkt tausende Euro kosten. Entscheidend ist, dass Besucher schnell verstehen,
-      was angeboten wird, Vertrauen aufbauen und einfach Kontakt aufnehmen können.
-    </p>
-    <p>
-      Genau darauf konzentriert sich Future Webuild: klare Seiten, moderne Darstellung, saubere Inhalte,
-      funktionierende Kontaktformulare und Demo-Projekte, die zeigen, was möglich ist.
-    </p>
-  </div>
-</section>
-
-<section id="language" class="page hidden simple-page">
-  <p class="eyebrow">SPRACHE</p>
-  <h1>Sprache auswählen</h1>
-  <p>Die Sprache kann direkt auf der Website umgeschaltet werden.</p>
-
-  <div class="language-box">
-    <button class="primary-btn" onclick="setLanguage('de')">Deutsch</button>
-    <button class="secondary-btn" onclick="setLanguage('en')">English</button>
-  </div>
-</section>
-
-<section id="orders" class="page hidden simple-page">
-  <p class="eyebrow">BESTELLUNGEN</p>
-  <h1>Bestellungen</h1>
-  <p>Bestellungen werden aktuell per Formular abgesendet. Ein echtes Kundenkonto kommt später.</p>
-
-  <div class="orders-box">
-    <h3>So funktioniert es aktuell</h3>
-    <p>1. Paket auswählen</p>
-    <p>2. In den Warenkorb legen</p>
-    <p>3. Bestellung als Anfrage absenden</p>
-    <p>4. Persönliche Rückmeldung per E-Mail</p>
   </div>
 </section>
 

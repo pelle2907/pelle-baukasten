@@ -144,18 +144,4 @@ function hideCookies() {
   document.getElementById("cookieBanner").classList.add("hidden");
 }
 
-function setLanguage(lang) {
-  const elements = document.querySelectorAll("[data-de][data-en]");
-
-  elements.forEach(function(el) {
-    el.textContent = el.getAttribute("data-" + lang);
-  });
-
-  if (lang === "de") {
-    alert("Sprache auf Deutsch gestellt.");
-  } else {
-    alert("Language changed to English.");
-  }
-}
-
 updateCart();
