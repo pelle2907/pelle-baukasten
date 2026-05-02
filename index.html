@@ -8,18 +8,6 @@
 </head>
 <body>
 
-<div id="cookieBanner" class="cookie-banner">
-  <div>
-    <strong>Cookies & Datenschutz</strong>
-    <p>Diese Website nutzt aktuell keine Tracking-Cookies. Das Banner ist für spätere Erweiterungen vorbereitet.</p>
-  </div>
-  <div class="cookie-actions">
-    <button class="soft-btn" onclick="hideCookies()">Ablehnen</button>
-    <button class="soft-btn" onclick="hideCookies()">Einstellen</button>
-    <button class="primary-btn" onclick="hideCookies()">Akzeptieren</button>
-  </div>
-</div>
-
 <header class="header">
   <div class="brand" onclick="showPage('home')">Future Webuild</div>
 
@@ -46,13 +34,15 @@
 <main>
 
 <section id="home" class="page">
-  <div class="hero">
+  <div class="hero premium-hero">
     <div class="hero-content">
       <p class="eyebrow">WEBDESIGN · ONLINE-SHOPS · DIGITALE AUFTRITTE</p>
-      <h1>Deine Website soll nicht nur online sein. Sie soll Kunden überzeugen.</h1>
+
+      <h1>Websites, die nicht nur gut aussehen – sondern Vertrauen schaffen.</h1>
+
       <p class="hero-text">
         Future Webuild erstellt moderne Websites und einfache Online-Shops für kleine Unternehmen,
-        Selbstständige und Projekte, die seriös auftreten und mehr Anfragen bekommen wollen.
+        Selbstständige und Projekte, die professionell online auftreten und mehr Anfragen bekommen wollen.
       </p>
 
       <div class="hero-actions">
@@ -63,36 +53,54 @@
       <div class="trust-row">
         <div>
           <strong>01</strong>
-          <span>moderner Auftritt</span>
+          <span>Moderner erster Eindruck</span>
         </div>
         <div>
           <strong>02</strong>
-          <span>klare Angebote</span>
+          <span>Klare Struktur</span>
         </div>
         <div>
           <strong>03</strong>
-          <span>direkte Anfrage</span>
+          <span>Direkte Anfragefunktion</span>
         </div>
       </div>
     </div>
 
-    <div class="hero-card">
-      <p>Aktuelles Projekt</p>
-      <h2>Café Milano</h2>
-      <span>Speisekarte mit Bildern</span>
-      <span>Reservierung</span>
-      <span>Kontaktbereich</span>
-      <button onclick="openCafe()">Demo ansehen</button>
+    <div class="hero-showcase">
+      <div class="showcase-top">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="showcase-body">
+        <p>Aktuelles Portfolio-Projekt</p>
+        <h2>Café Milano</h2>
+        <p>
+          Eine fertige Demo-Website mit Atmosphäre, Speisekarte, Bildern,
+          Kontaktbereich und Reservierungsfunktion.
+        </p>
+
+        <div class="showcase-tags">
+          <span>Speisekarte</span>
+          <span>Bilder</span>
+          <span>Reservierung</span>
+          <span>Kontakt</span>
+        </div>
+
+        <button onclick="openCafe()">Café Milano ansehen</button>
+      </div>
     </div>
   </div>
 
   <section class="section intro-section">
     <div class="section-head">
-      <p class="eyebrow">KLARER AUFTRITT</p>
-      <h2>Eine gute Website erklärt sofort, warum man dir vertrauen kann.</h2>
+      <p class="eyebrow">WORUM ES GEHT</p>
+      <h2>Eine Website muss sofort zeigen, dass man dir vertrauen kann.</h2>
       <p>
-        Besucher sollen nicht lange suchen. Sie sollen direkt verstehen, was du anbietest,
-        warum es seriös wirkt und wie sie Kontakt aufnehmen können.
+        Besucher entscheiden in wenigen Sekunden, ob eine Seite seriös wirkt.
+        Deshalb braucht eine gute Website klare Worte, saubere Struktur,
+        modernes Design und einen einfachen Weg zur Anfrage.
       </p>
     </div>
 
@@ -100,19 +108,28 @@
       <div class="info-card">
         <span>Für wen?</span>
         <h3>Kleine Unternehmen</h3>
-        <p>Für Cafés, Friseure, Fitnessstudios, Dienstleister, Creator, Vereine und Selbstständige.</p>
+        <p>
+          Für Cafés, Friseure, Fitnessstudios, lokale Dienstleister, Vereine,
+          Creator, Selbstständige und neue Projekte.
+        </p>
       </div>
 
       <div class="info-card">
         <span>Was?</span>
-        <h3>Websites & Shops</h3>
-        <p>Moderne Websites, einfache Online-Shops, Angebotsseiten, Portfolios und Kontaktseiten.</p>
+        <h3>Websites & Online-Shops</h3>
+        <p>
+          Moderne Websites, Angebotsseiten, Portfolios, einfache Online-Shops,
+          Produktseiten und Kontaktbereiche.
+        </p>
       </div>
 
       <div class="info-card">
         <span>Ziel?</span>
         <h3>Mehr Anfragen</h3>
-        <p>Der Fokus liegt auf einem professionellen Eindruck und einem einfachen Weg zur Anfrage.</p>
+        <p>
+          Die Website soll nicht nur schön aussehen, sondern Besuchern Orientierung geben
+          und sie zu einer Anfrage führen.
+        </p>
       </div>
     </div>
   </section>
@@ -120,18 +137,45 @@
   <section class="section split-section">
     <div>
       <p class="eyebrow">ABLAUF</p>
-      <h2>Einfach auswählen, anfragen und persönlich abstimmen.</h2>
+      <h2>Einfach auswählen, Anfrage senden und persönlich abstimmen.</h2>
       <p>
-        Du wählst ein Paket aus und sendest eine Anfrage. Danach wird persönlich geklärt,
-        was genau gebraucht wird. So bleibt der Start einfach und verständlich.
+        Kunden wählen ein Paket aus, legen es in den Warenkorb und senden die Auswahl
+        als Anfrage ab. Danach werden Inhalte, Umfang und Umsetzung persönlich geklärt.
       </p>
     </div>
 
     <div class="process-box">
       <div><strong>1</strong><span>Paket auswählen</span></div>
-      <div><strong>2</strong><span>Anfrage senden</span></div>
-      <div><strong>3</strong><span>Details abstimmen</span></div>
+      <div><strong>2</strong><span>Anfrage absenden</span></div>
+      <div><strong>3</strong><span>Details besprechen</span></div>
       <div><strong>4</strong><span>Website umsetzen</span></div>
+    </div>
+  </section>
+
+  <section class="section split-section reverse-mobile">
+    <div class="showcase-panel">
+      <p class="eyebrow">LIVE DEMO</p>
+      <h2>Café Milano ist dein erstes fertiges Vorzeigeprojekt.</h2>
+      <p>
+        Das Café-Projekt zeigt Kunden direkt, dass Future Webuild nicht nur einfache Texte
+        auf eine Seite setzt, sondern echte, nutzbare Webseiten mit Struktur und Atmosphäre baut.
+      </p>
+      <button class="primary-btn" onclick="openCafe()">Demo öffnen</button>
+    </div>
+
+    <div class="mini-browser">
+      <div class="mini-browser-top">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="mini-browser-body">
+        <h3>Café Milano</h3>
+        <p>Startseite · Karte · Kontakt · Reservierung</p>
+        <div class="mini-lines">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   </section>
 </section>
@@ -228,7 +272,8 @@
   <div class="notice">
     <h3>So läuft die Anfrage ab</h3>
     <p>
-      Paket auswählen, Anfrage senden, Rückmeldung erhalten. Danach werden Umfang, Inhalte und Umsetzung persönlich besprochen.
+      Paket auswählen, Anfrage senden, Rückmeldung erhalten.
+      Danach werden Umfang, Inhalte und Umsetzung persönlich besprochen.
     </p>
   </div>
 </section>
@@ -347,7 +392,8 @@
   <div class="about-text">
     <p>
       Viele kleine Unternehmen brauchen eine moderne Website, aber keine große Agentur mit komplizierten Abläufen.
-      Future Webuild soll genau diese Lücke füllen: bezahlbare Websites und einfache Online-Shops, die professionell wirken.
+      Future Webuild soll genau diese Lücke füllen: bezahlbare Websites und einfache Online-Shops,
+      die professionell wirken.
     </p>
 
     <p>
@@ -356,8 +402,8 @@
     </p>
 
     <p>
-      Mit Café Milano gibt es bereits ein fertiges Demo-Projekt. Weitere Demos wie eine Gym-Website und ein Online-Shop
-      sollen das Portfolio Schritt für Schritt erweitern.
+      Mit Café Milano gibt es bereits ein fertiges Demo-Projekt. Weitere Demos wie eine Gym-Website
+      und ein Online-Shop sollen das Portfolio Schritt für Schritt erweitern.
     </p>
   </div>
 

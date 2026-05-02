@@ -138,8 +138,4 @@ function openCafe() {
   window.open("https://cafe-demo-7mk4.onrender.com", "_blank");
 }
 
-function hideCookies() {
-  document.getElementById("cookieBanner").classList.add("hidden");
-}
-
 updateCart();
