@@ -23,6 +23,10 @@ function showPage(id) {
     menu.classList.add("hidden");
   }
 
+  if (id === "checkout") {
+    updateCheckout();
+  }
+
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -42,6 +46,9 @@ function addToCart(name, price) {
 function updateCart() {
   const cartItems = document.getElementById("cartItems");
   const total = document.getElementById("total");
+  const cartCount = document.getElementById("cartCount");
+
+  if (!cartItems || !total || !cartCount) return;
 
   cartItems.innerHTML = "";
 
@@ -66,63 +73,89 @@ function updateCart() {
   });
 
   total.textContent = sum;
+  cartCount.textContent = cart.length;
+}
+
+function updateCheckout() {
+  const checkoutItems = document.getElementById("checkoutItems");
+  const checkoutTotal = document.getElementById("checkoutTotal");
+
+  if (!checkoutItems || !checkoutTotal) return;
+
+  checkoutItems.innerHTML = "";
+
+  let sum = 0;
+
+  if (cart.length === 0) {
+    checkoutItems.innerHTML = "<p>Keine Pakete ausgewählt.</p>";
+  }
+
+  cart.forEach(function(item) {
+    sum += item.price;
+
+    checkoutItems.innerHTML += `
+      <div class="checkout-item">
+        <strong>${item.name}</strong>
+        <span>${item.price} €</span>
+      </div>
+    `;
+  });
+
+  checkoutTotal.textContent = sum;
+}
+
+function prepareOrder() {
+  const orderInput = document.getElementById("orderInput");
+  const totalInput = document.getElementById("totalInput");
+
+  let sum = 0;
+  let orderText = "";
+
+  cart.forEach(function(item) {
+    sum += item.price;
+    orderText += item.name + " - " + item.price + " €\n";
+  });
+
+  if (cart.length === 0) {
+    orderText = "Keine Pakete ausgewählt.";
+  }
+
+  orderInput.value = orderText;
+  totalInput.value = sum + " €";
 }
 
 function removeItem(index) {
   cart.splice(index, 1);
   updateCart();
+  updateCheckout();
 }
 
 function clearCart() {
   cart = [];
   updateCart();
-}
-
-function checkout() {
-  if (cart.length === 0) {
-    alert("Dein Warenkorb ist leer.");
-    return;
-  }
-
-  alert("Checkout kommt später. Aktuell ist das noch ein Test-Warenkorb.");
-}
-
-function sendRequest(event) {
-  event.preventDefault();
-
-  const name = document.getElementById("name").value;
-  const packageChoice = document.getElementById("packageChoice").value;
-
-  alert("Danke " + name + "! Deine Anfrage für " + packageChoice + " wurde vorbereitet.");
-
-  document.getElementById("name").value = "";
-  document.getElementById("email").value = "";
-  document.getElementById("message").value = "";
+  updateCheckout();
 }
 
 function openCafe() {
   window.open("https://cafe-demo-7mk4.onrender.com", "_blank");
 }
 
-function login() {
-  const password = document.getElementById("pw").value;
-
-  if (password === "1234") {
-    document.getElementById("loginArea").classList.add("hidden");
-    document.getElementById("adminArea").classList.remove("hidden");
-  } else {
-    alert("Falsches Passwort.");
-  }
-}
-
-function logout() {
-  document.getElementById("adminArea").classList.add("hidden");
-  document.getElementById("loginArea").classList.remove("hidden");
-  document.getElementById("pw").value = "";
-}
-
 function hideCookies() {
   document.getElementById("cookieBanner").classList.add("hidden");
+}
+
+function setLanguage(lang) {
+  const elements = document.querySelectorAll("[data-de][data-en]");
+
+  elements.forEach(function(el) {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+
+  if (lang === "de") {
+    alert("Sprache auf Deutsch gestellt.");
+  } else {
+    alert("Language changed to English.");
+  }
 }
 
 updateCart();

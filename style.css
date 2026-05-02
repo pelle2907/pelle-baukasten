@@ -80,11 +80,22 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
-.cart-clean-btn:hover,
-.menu-btn:hover {
-  background: rgba(255, 255, 255, 0.10);
+.cart-count {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+  min-width: 21px;
+  height: 21px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: white;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .bag-icon {
@@ -317,6 +328,7 @@ p {
 .portfolio-card,
 .cart-layout,
 .contact-layout,
+.checkout-layout,
 .simple-page {
   width: min(1180px, calc(100% - 40px));
   margin-left: auto;
@@ -354,9 +366,10 @@ p {
 .summary-box,
 .contact-form,
 .contact-side,
+.checkout-side,
 .orders-box,
-.support-box,
-.mini-note {
+.mini-note,
+.about-deep {
   background: rgba(255,255,255,0.055);
   border: 1px solid var(--line);
   border-radius: 28px;
@@ -366,9 +379,9 @@ p {
 
 .info-card,
 .showcase-card,
-.support-box,
 .orders-box,
-.mini-note {
+.mini-note,
+.about-deep {
   padding: 28px;
 }
 
@@ -390,6 +403,11 @@ p {
   font-size: 34px;
 }
 
+.showcase-card ul {
+  color: var(--soft);
+  line-height: 1.9;
+}
+
 .page-head {
   text-align: center;
   padding: 72px 20px 42px;
@@ -403,10 +421,6 @@ p {
 .category-title {
   width: min(1180px, calc(100% - 40px));
   margin: 38px auto 20px;
-}
-
-.price-grid {
-  gap: 22px;
 }
 
 .price-grid.two {
@@ -527,7 +541,8 @@ ul {
 }
 
 .cart-layout,
-.contact-layout {
+.contact-layout,
+.checkout-layout {
   display: grid;
   grid-template-columns: 1.5fr 0.9fr;
   gap: 24px;
@@ -537,11 +552,13 @@ ul {
 .summary-box,
 .contact-form,
 .contact-side,
+.checkout-side,
 .simple-page {
   padding: 32px;
 }
 
-.cart-item {
+.cart-item,
+.checkout-item {
   padding: 18px;
   border-radius: 18px;
   background: rgba(255,255,255,0.065);
@@ -583,17 +600,14 @@ textarea {
   resize: vertical;
 }
 
-.language-box,
-.login-box,
-.admin-top {
+.language-box {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  align-items: center;
 }
 
-.admin {
-  margin-top: 28px;
+.checkout-total {
+  font-size: 20px;
 }
 
 .cookie-banner {
@@ -664,7 +678,8 @@ textarea {
   .price-grid.two,
   .portfolio-card,
   .cart-layout,
-  .contact-layout {
+  .contact-layout,
+  .checkout-layout {
     grid-template-columns: 1fr;
   }
 
