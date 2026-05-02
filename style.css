@@ -6,10 +6,9 @@
   --bg: #111014;
   --bg2: #1b171d;
   --panel: rgba(255, 255, 255, 0.07);
-  --panel2: rgba(255, 255, 255, 0.1);
   --cream: #f8efe3;
-  --warm: #d6a86c;
-  --warm2: #f0c98c;
+  --warm: #b7834e;
+  --warm2: #e2b87c;
   --text: #ffffff;
   --muted: #cfc6bb;
   --line: rgba(255, 255, 255, 0.14);
@@ -23,8 +22,8 @@ body {
   font-family: Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 18% 8%, rgba(214, 168, 108, 0.22), transparent 28%),
-    radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.07), transparent 24%),
+    radial-gradient(circle at 18% 8%, rgba(183, 131, 78, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.06), transparent 24%),
     linear-gradient(135deg, #0c0b0e, var(--bg), var(--bg2));
 }
 
@@ -34,7 +33,7 @@ body {
   width: 100%;
   height: 84px;
   padding: 0 42px;
-  background: rgba(12, 11, 14, 0.88);
+  background: rgba(12, 11, 14, 0.9);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
   display: flex;
@@ -79,7 +78,6 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .bag-icon {
@@ -90,21 +88,6 @@ button:hover {
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.cart-count {
-  position: absolute;
-  top: -7px;
-  right: -7px;
-  min-width: 21px;
-  height: 21px;
-  border-radius: 999px;
-  background: var(--warm);
-  color: var(--dark);
-  font-size: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .menu-dropdown {
@@ -153,7 +136,7 @@ main {
   border-radius: 42px;
   background:
     linear-gradient(135deg, rgba(255,255,255,0.095), rgba(255,255,255,0.025)),
-    radial-gradient(circle at 20% 20%, rgba(214,168,108,0.18), transparent 34%);
+    radial-gradient(circle at 20% 20%, rgba(183,131,78,0.15), transparent 34%);
   border: 1px solid var(--line);
   box-shadow: 0 45px 120px rgba(0,0,0,0.52);
 }
@@ -213,7 +196,7 @@ p {
 .primary-btn {
   background: linear-gradient(135deg, var(--warm), var(--warm2));
   color: var(--dark);
-  box-shadow: 0 18px 38px rgba(214,168,108,0.22);
+  box-shadow: 0 18px 38px rgba(183,131,78,0.22);
 }
 
 .secondary-btn {
@@ -327,7 +310,6 @@ p {
 }
 
 .cards-grid,
-.about-grid,
 .price-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -346,6 +328,7 @@ p {
 .checkout-side,
 .orders-box,
 .mini-note,
+.about-highlight,
 .about-deep {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -358,6 +341,7 @@ p {
 .process-box,
 .orders-box,
 .mini-note,
+.about-highlight,
 .about-deep {
   padding: 28px;
 }
@@ -381,7 +365,8 @@ p {
   gap: 14px;
 }
 
-.process-box div {
+.process-box div,
+.about-list div {
   padding: 18px;
   border-radius: 20px;
   background: rgba(255,255,255,0.055);
@@ -390,12 +375,14 @@ p {
   gap: 14px;
 }
 
-.process-box strong {
+.process-box strong,
+.about-list strong {
   color: var(--warm2);
   font-size: 22px;
 }
 
-.process-box span {
+.process-box span,
+.about-list span {
   color: var(--muted);
 }
 
@@ -424,7 +411,7 @@ p {
 }
 
 .price-card.featured {
-  border: 2px solid rgba(240,201,140,0.48);
+  border: 2px solid rgba(226,184,124,0.42);
   transform: translateY(-10px);
 }
 
@@ -490,7 +477,7 @@ ul {
 
 .next-visual {
   background:
-    radial-gradient(circle at 20% 20%, rgba(214,168,108,0.25), transparent 35%),
+    radial-gradient(circle at 20% 20%, rgba(183,131,78,0.25), transparent 35%),
     #0b0f18;
 }
 
@@ -546,6 +533,23 @@ ul {
 .checkout-side,
 .simple-page {
   padding: 32px;
+}
+
+.about-page {
+  padding-top: 72px;
+}
+
+.about-text {
+  max-width: 900px;
+}
+
+.about-highlight {
+  margin-top: 28px;
+}
+
+.about-list {
+  display: grid;
+  gap: 14px;
 }
 
 .cart-item,
@@ -656,7 +660,6 @@ textarea {
   .hero,
   .trust-row,
   .cards-grid,
-  .about-grid,
   .split-section,
   .price-grid,
   .price-grid.two,

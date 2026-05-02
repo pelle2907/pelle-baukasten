@@ -46,9 +46,8 @@ function addToCart(name, price) {
 function updateCart() {
   const cartItems = document.getElementById("cartItems");
   const total = document.getElementById("total");
-  const cartCount = document.getElementById("cartCount");
 
-  if (!cartItems || !total || !cartCount) return;
+  if (!cartItems || !total) return;
 
   cartItems.innerHTML = "";
 
@@ -73,7 +72,6 @@ function updateCart() {
   });
 
   total.textContent = sum;
-  cartCount.textContent = cart.length;
 }
 
 function updateCheckout() {
