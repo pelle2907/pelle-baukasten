@@ -3,16 +3,22 @@
 }
 
 :root {
-  --bg: #111014;
-  --bg2: #1b171d;
-  --panel: rgba(255, 255, 255, 0.07);
-  --cream: #f8efe3;
-  --warm: #b7834e;
-  --warm2: #e2b87c;
+  --bg: #08090b;
+  --bg2: #101114;
+  --bg3: #17181d;
+  --panel: rgba(255, 255, 255, 0.045);
+  --panel-strong: rgba(255, 255, 255, 0.075);
+  --cream: #f3f1e9;
+  --chalk: #d8d6cc;
+  --yellow: #ffd60a;
+  --yellow-soft: #ffe36e;
+  --yellow-deep: #d6a800;
   --text: #ffffff;
-  --muted: #cfc6bb;
-  --line: rgba(255, 255, 255, 0.14);
-  --dark: #1a120c;
+  --muted: #b9b9b2;
+  --muted2: #8f908b;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.20);
+  --dark: #0c0d10;
   --danger: #ef4444;
 }
 
@@ -22,9 +28,9 @@ body {
   font-family: Arial, sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 18% 8%, rgba(183, 131, 78, 0.18), transparent 28%),
-    radial-gradient(circle at 85% 18%, rgba(255, 255, 255, 0.06), transparent 24%),
-    linear-gradient(135deg, #0c0b0e, var(--bg), var(--bg2));
+    radial-gradient(circle at 18% 0%, rgba(255, 214, 10, 0.14), transparent 32%),
+    radial-gradient(circle at 88% 16%, rgba(243, 241, 233, 0.08), transparent 24%),
+    linear-gradient(135deg, var(--bg), var(--bg2) 48%, var(--bg3));
 }
 
 .header {
@@ -33,7 +39,7 @@ body {
   width: 100%;
   height: 84px;
   padding: 0 42px;
-  background: rgba(12, 11, 14, 0.9);
+  background: rgba(8, 9, 11, 0.90);
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--line);
   display: flex;
@@ -47,6 +53,7 @@ body {
   font-weight: 900;
   letter-spacing: -0.8px;
   cursor: pointer;
+  color: var(--cream);
 }
 
 .header-actions {
@@ -72,7 +79,7 @@ button:hover {
   width: 46px;
   height: 46px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.055);
   border: 1px solid var(--line);
   color: white;
   display: flex;
@@ -80,11 +87,17 @@ button:hover {
   justify-content: center;
 }
 
+.menu-btn:hover,
+.cart-btn:hover {
+  border-color: rgba(255, 214, 10, 0.55);
+  box-shadow: 0 0 28px rgba(255, 214, 10, 0.12);
+}
+
 .bag-icon {
   width: 22px;
   height: 22px;
   fill: none;
-  stroke: white;
+  stroke: var(--cream);
   stroke-width: 1.9;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -140,14 +153,14 @@ main {
 
 .premium-hero {
   background:
-    linear-gradient(135deg, rgba(248, 239, 227, 0.13), rgba(255,255,255,0.035)),
-    radial-gradient(circle at 20% 20%, rgba(226,184,124,0.22), transparent 35%),
-    radial-gradient(circle at 90% 85%, rgba(255,255,255,0.07), transparent 32%);
+    linear-gradient(135deg, rgba(243, 241, 233, 0.10), rgba(255,255,255,0.025)),
+    radial-gradient(circle at 22% 18%, rgba(255, 214, 10, 0.18), transparent 34%),
+    radial-gradient(circle at 90% 85%, rgba(243, 241, 233, 0.08), transparent 30%);
 }
 
 .eyebrow {
   margin: 0 0 18px;
-  color: var(--warm2);
+  color: var(--yellow);
   font-size: 13px;
   letter-spacing: 3px;
   font-weight: 900;
@@ -158,6 +171,7 @@ h1 {
   font-size: 68px;
   line-height: 0.98;
   letter-spacing: -3px;
+  color: var(--cream);
 }
 
 h2 {
@@ -165,10 +179,12 @@ h2 {
   font-size: 42px;
   line-height: 1.08;
   letter-spacing: -1.4px;
+  color: var(--cream);
 }
 
 h3 {
   margin: 0 0 10px;
+  color: var(--cream);
 }
 
 p {
@@ -180,6 +196,7 @@ p {
 .hero-text {
   max-width: 760px;
   font-size: 20px;
+  color: var(--chalk);
 }
 
 .hero-actions {
@@ -198,15 +215,19 @@ p {
 }
 
 .primary-btn {
-  background: linear-gradient(135deg, var(--warm), var(--warm2));
-  color: var(--dark);
-  box-shadow: 0 18px 38px rgba(183,131,78,0.22);
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-soft));
+  color: #050505;
+  box-shadow: 0 18px 38px rgba(255, 214, 10, 0.20);
 }
 
 .secondary-btn {
-  color: white;
-  background: rgba(255,255,255,0.07);
+  color: var(--cream);
+  background: rgba(255,255,255,0.045);
   border: 1px solid var(--line);
+}
+
+.secondary-btn:hover {
+  border-color: rgba(255, 214, 10, 0.45);
 }
 
 .danger-btn {
@@ -223,31 +244,6 @@ p {
   width: 100%;
 }
 
-.trust-row {
-  margin-top: 42px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.trust-row div {
-  padding: 18px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.055);
-  border: 1px solid var(--line);
-}
-
-.trust-row strong {
-  display: block;
-  color: var(--warm2);
-  font-size: 21px;
-}
-
-.trust-row span {
-  color: var(--muted);
-  font-size: 14px;
-}
-
 .hero-showcase {
   overflow: hidden;
   border-radius: 34px;
@@ -259,7 +255,7 @@ p {
 .showcase-top,
 .mini-browser-top {
   height: 46px;
-  background: rgba(26,18,12,0.13);
+  background: rgba(12,13,16,0.13);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -271,7 +267,7 @@ p {
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: rgba(26,18,12,0.35);
+  background: rgba(12,13,16,0.35);
 }
 
 .showcase-body {
@@ -279,17 +275,17 @@ p {
 }
 
 .showcase-body p {
-  color: #6f4a34;
+  color: #565650;
 }
 
 .showcase-body > p:first-child {
-  color: #9a5e2b;
+  color: #9a7a00;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 .showcase-body h2 {
-  color: var(--dark);
+  color: #121212;
 }
 
 .showcase-tags span {
@@ -329,9 +325,13 @@ p {
   margin-top: 34px;
   padding: 48px;
   border-radius: 34px;
-  background: rgba(255,255,255,0.045);
-  border: 1px solid var(--line);
-  backdrop-filter: blur(18px);
+  background: transparent;
+  border: 1px solid transparent;
+}
+
+.clean-section {
+  border-color: transparent;
+  box-shadow: none;
 }
 
 .section-head {
@@ -344,6 +344,12 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
+}
+
+.cleaner-cards .info-card {
+  background: transparent;
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.08);
 }
 
 .info-card,
@@ -365,7 +371,7 @@ p {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 28px;
-  box-shadow: 0 24px 80px rgba(0,0,0,0.24);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.20);
   backdrop-filter: blur(18px);
 }
 
@@ -381,7 +387,7 @@ p {
 
 .info-card span {
   display: inline-block;
-  color: var(--warm2);
+  color: var(--yellow);
   font-weight: 900;
   margin-bottom: 14px;
 }
@@ -402,7 +408,7 @@ p {
 .about-list div {
   padding: 18px;
   border-radius: 20px;
-  background: rgba(255,255,255,0.055);
+  background: rgba(255,255,255,0.045);
   display: flex;
   align-items: center;
   gap: 14px;
@@ -410,7 +416,7 @@ p {
 
 .process-box strong,
 .about-list strong {
-  color: var(--warm2);
+  color: var(--yellow);
   font-size: 22px;
 }
 
@@ -464,19 +470,19 @@ p {
 }
 
 .price-card.featured {
-  border: 2px solid rgba(226,184,124,0.42);
+  border: 2px solid rgba(255, 214, 10, 0.42);
   transform: translateY(-10px);
 }
 
 .label {
-  color: var(--warm2);
+  color: var(--yellow);
   font-size: 13px;
   letter-spacing: 2px;
   font-weight: 900;
 }
 
 .price {
-  color: white;
+  color: var(--cream);
   font-size: 52px;
   font-weight: 900;
   margin: 12px 0;
@@ -486,7 +492,7 @@ p {
   position: absolute;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, var(--warm), var(--warm2));
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-soft));
   color: var(--dark);
   padding: 8px 13px;
   border-radius: 999px;
@@ -525,27 +531,27 @@ ul {
 }
 
 .cafe-visual {
-  background: #fff8ee;
+  background: var(--cream);
 }
 
 .next-visual {
   background:
-    radial-gradient(circle at 20% 20%, rgba(183,131,78,0.25), transparent 35%),
+    radial-gradient(circle at 20% 20%, rgba(255, 214, 10, 0.16), transparent 35%),
     #0b0f18;
 }
 
 .portfolio-visual p {
-  color: #a15c2f;
+  color: #9a7a00;
   font-weight: 900;
   letter-spacing: 2px;
 }
 
 .next-visual p {
-  color: var(--warm2);
+  color: var(--yellow);
 }
 
 .portfolio-visual h2 {
-  color: #3b2416;
+  color: #121212;
   max-width: 470px;
 }
 
@@ -609,7 +615,7 @@ ul {
 .checkout-item {
   padding: 18px;
   border-radius: 18px;
-  background: rgba(255,255,255,0.065);
+  background: rgba(255,255,255,0.055);
   border: 1px solid var(--line);
   display: flex;
   justify-content: space-between;
@@ -629,6 +635,7 @@ ul {
 
 label {
   font-weight: 900;
+  color: var(--cream);
 }
 
 input,
@@ -641,6 +648,8 @@ textarea {
   font-family: Arial, sans-serif;
   font-weight: 700;
   outline: none;
+  background: var(--cream);
+  color: var(--dark);
 }
 
 textarea {
@@ -706,7 +715,6 @@ textarea {
   }
 
   .hero,
-  .trust-row,
   .cards-grid,
   .split-section,
   .price-grid,
@@ -752,8 +760,8 @@ textarea {
 @media (max-width: 620px) {
   body {
     background:
-      radial-gradient(circle at 20% 0%, rgba(183, 131, 78, 0.16), transparent 36%),
-      linear-gradient(135deg, #0c0b0e, #171219);
+      radial-gradient(circle at 20% 0%, rgba(255, 214, 10, 0.13), transparent 36%),
+      linear-gradient(135deg, #08090b, #131418);
   }
 
   .header {
@@ -849,24 +857,6 @@ textarea {
     width: 100%;
     padding: 14px 18px;
     font-size: 15px;
-  }
-
-  .trust-row {
-    gap: 10px;
-    margin-top: 24px;
-  }
-
-  .trust-row div {
-    padding: 14px;
-    border-radius: 18px;
-  }
-
-  .trust-row strong {
-    font-size: 18px;
-  }
-
-  .trust-row span {
-    font-size: 13px;
   }
 
   .hero-showcase {
