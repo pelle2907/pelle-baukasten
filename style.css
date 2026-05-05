@@ -668,17 +668,41 @@ textarea {
   }
 }
 
+/* TABLET */
 @media (max-width: 950px) {
   .header {
+    height: 76px;
     padding: 0 18px;
+  }
+
+  main {
+    padding-top: 76px;
+  }
+
+  .brand {
+    font-size: 22px;
+  }
+
+  .menu-btn,
+  .cart-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .menu-dropdown {
+    top: 84px;
+    right: 18px;
+    width: calc(100% - 36px);
   }
 
   h1 {
     font-size: 44px;
+    letter-spacing: -1.8px;
   }
 
   h2 {
     font-size: 32px;
+    letter-spacing: -0.8px;
   }
 
   .hero,
@@ -696,6 +720,7 @@ textarea {
 
   .hero {
     padding: 42px 24px;
+    min-height: auto;
   }
 
   .price-card.featured {
@@ -704,5 +729,314 @@ textarea {
 
   .portfolio-card.reverse .portfolio-visual {
     order: 0;
+  }
+
+  .section,
+  .page-head,
+  .price-grid,
+  .portfolio-card,
+  .cart-layout,
+  .contact-layout,
+  .checkout-layout,
+  .simple-page,
+  .category-title {
+    width: min(100% - 28px, 1180px);
+  }
+
+  .section {
+    padding: 30px;
+  }
+}
+
+/* HANDY */
+@media (max-width: 620px) {
+  body {
+    background:
+      radial-gradient(circle at 20% 0%, rgba(183, 131, 78, 0.16), transparent 36%),
+      linear-gradient(135deg, #0c0b0e, #171219);
+  }
+
+  .header {
+    height: 70px;
+    padding: 0 14px;
+  }
+
+  main {
+    padding-top: 70px;
+  }
+
+  .brand {
+    font-size: 19px;
+    letter-spacing: -0.4px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .menu-btn,
+  .cart-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bag-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menu-dropdown {
+    top: 78px;
+    right: 12px;
+    width: calc(100% - 24px);
+    border-radius: 20px;
+  }
+
+  .menu-dropdown button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .hero {
+    width: calc(100% - 20px);
+    margin-top: 12px;
+    padding: 28px 18px;
+    border-radius: 28px;
+    gap: 24px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 34px;
+    line-height: 1.02;
+    letter-spacing: -1.2px;
+  }
+
+  h2 {
+    font-size: 28px;
+    line-height: 1.12;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .primary-btn,
+  .secondary-btn,
+  .danger-btn,
+  .soft-btn {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .trust-row {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .trust-row div {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .trust-row strong {
+    font-size: 18px;
+  }
+
+  .trust-row span {
+    font-size: 13px;
+  }
+
+  .hero-showcase {
+    border-radius: 24px;
+  }
+
+  .showcase-body {
+    padding: 24px;
+  }
+
+  .showcase-body h2 {
+    font-size: 30px;
+  }
+
+  .showcase-tags span {
+    font-size: 12px;
+    padding: 9px 11px;
+  }
+
+  .section,
+  .page-head,
+  .price-grid,
+  .portfolio-card,
+  .cart-layout,
+  .contact-layout,
+  .checkout-layout,
+  .simple-page,
+  .category-title {
+    width: calc(100% - 20px);
+  }
+
+  .section {
+    margin-top: 18px;
+    padding: 24px 18px;
+    border-radius: 26px;
+  }
+
+  .section-head {
+    margin-bottom: 20px;
+  }
+
+  .info-card,
+  .process-box,
+  .price-card,
+  .notice,
+  .cart-box,
+  .summary-box,
+  .contact-form,
+  .contact-side,
+  .checkout-side,
+  .orders-box,
+  .mini-note,
+  .about-highlight,
+  .about-deep,
+  .showcase-panel {
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .cards-grid,
+  .price-grid {
+    gap: 14px;
+  }
+
+  .page-head {
+    padding: 38px 8px 24px;
+  }
+
+  .page-head h1 {
+    font-size: 36px;
+  }
+
+  .category-title {
+    margin-top: 24px;
+    margin-bottom: 14px;
+    font-size: 26px;
+  }
+
+  .price-card.featured {
+    border-width: 1px;
+  }
+
+  .price {
+    font-size: 42px;
+  }
+
+  .badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 14px;
+  }
+
+  .portfolio-card {
+    border-radius: 24px;
+  }
+
+  .portfolio-visual {
+    min-height: 300px;
+    padding: 28px 22px;
+  }
+
+  .portfolio-info {
+    padding: 26px 22px;
+  }
+
+  .portfolio-visual h2 {
+    font-size: 30px;
+  }
+
+  .cart-item,
+  .checkout-item {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cart-item .danger-btn {
+    width: auto;
+  }
+
+  .summary-box h3 {
+    font-size: 38px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+    padding: 15px;
+  }
+
+  .about-page {
+    padding-top: 38px;
+  }
+
+  .about-list div,
+  .process-box div {
+    align-items: flex-start;
+  }
+
+  .mini-browser-body {
+    padding: 22px;
+  }
+
+  .reverse-mobile .showcase-panel {
+    order: 2;
+  }
+
+  .reverse-mobile .mini-browser {
+    order: 1;
+  }
+}
+
+/* KLEINE HANDYS */
+@media (max-width: 380px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .hero {
+    padding: 24px 15px;
+  }
+
+  .brand {
+    font-size: 17px;
+  }
+
+  .menu-btn,
+  .cart-btn {
+    width: 38px;
+    height: 38px;
   }
 }
